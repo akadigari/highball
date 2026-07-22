@@ -1,0 +1,593 @@
+{
+ "config": {
+  "cities": [
+   "nyc",
+   "lv",
+   "chi"
+  ],
+  "from": "2026-06-15",
+  "to": "2026-07-20",
+  "tables_built_through": "2026-06-15"
+ },
+ "cities": {
+  "nyc": {
+   "candidates": 36,
+   "entries": 15,
+   "win_rate": 0.533,
+   "avg_ask": 36.9,
+   "avg_p_model": 57.7,
+   "pnl_taker_total": 221,
+   "pnl_maker_total": 247
+  },
+  "lv": {
+   "candidates": 36,
+   "entries": 19,
+   "win_rate": 0.316,
+   "avg_ask": 29.4,
+   "avg_p_model": 44.8,
+   "pnl_taker_total": 9,
+   "pnl_maker_total": 41
+  },
+  "chi": {
+   "candidates": 36,
+   "entries": 16,
+   "win_rate": 0.375,
+   "avg_ask": 26.0,
+   "avg_p_model": 44.4,
+   "pnl_taker_total": 159,
+   "pnl_maker_total": 184
+  }
+ },
+ "entries": [
+  {
+   "date": "2026-06-15",
+   "ticker": "KXHIGHNY-26JUN15-T78",
+   "ask": 49,
+   "p_model": 76.7,
+   "ev": 25.7,
+   "won": true,
+   "pnl_taker": 49,
+   "pnl_maker": 51,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-20",
+   "ticker": "KXHIGHNY-26JUN20-T82",
+   "ask": 57,
+   "p_model": 65.5,
+   "ev": 6.5,
+   "won": true,
+   "pnl_taker": 41,
+   "pnl_maker": 43,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-24",
+   "ticker": "KXHIGHNY-26JUN24-T82",
+   "ask": 57,
+   "p_model": 65.5,
+   "ev": 6.5,
+   "won": false,
+   "pnl_taker": -59,
+   "pnl_maker": -57,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-28",
+   "ticker": "KXHIGHNY-26JUN28-B77.5",
+   "ask": 23,
+   "p_model": 31.1,
+   "ev": 6.1,
+   "won": false,
+   "pnl_taker": -25,
+   "pnl_maker": -23,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-29",
+   "ticker": "KXHIGHNY-26JUN29-T86",
+   "ask": 19,
+   "p_model": 34.5,
+   "ev": 13.5,
+   "won": true,
+   "pnl_taker": 79,
+   "pnl_maker": 81,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-30",
+   "ticker": "KXHIGHNY-26JUN30-T90",
+   "ask": 13,
+   "p_model": 23.3,
+   "ev": 9.3,
+   "won": false,
+   "pnl_taker": -14,
+   "pnl_maker": -13,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-06",
+   "ticker": "KXHIGHNY-26JUL06-T75",
+   "ask": 85,
+   "p_model": 96.9,
+   "ev": 10.9,
+   "won": true,
+   "pnl_taker": 14,
+   "pnl_maker": 15,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-08",
+   "ticker": "KXHIGHNY-26JUL08-B78.5",
+   "ask": 11,
+   "p_model": 28.8,
+   "ev": 16.8,
+   "won": false,
+   "pnl_taker": -12,
+   "pnl_maker": -11,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-09",
+   "ticker": "KXHIGHNY-26JUL09-T83",
+   "ask": 38,
+   "p_model": 94.3,
+   "ev": 54.3,
+   "won": true,
+   "pnl_taker": 60,
+   "pnl_maker": 62,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-10",
+   "ticker": "KXHIGHNY-26JUL10-T87",
+   "ask": 48,
+   "p_model": 65.5,
+   "ev": 15.5,
+   "won": true,
+   "pnl_taker": 50,
+   "pnl_maker": 52,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-11",
+   "ticker": "KXHIGHNY-26JUL11-T81",
+   "ask": 67,
+   "p_model": 94.3,
+   "ev": 25.3,
+   "won": false,
+   "pnl_taker": -69,
+   "pnl_maker": -67,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-12",
+   "ticker": "KXHIGHNY-26JUL12-T82",
+   "ask": 18,
+   "p_model": 53.4,
+   "ev": 33.4,
+   "won": false,
+   "pnl_taker": -20,
+   "pnl_maker": -18,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-13",
+   "ticker": "KXHIGHNY-26JUL13-B82.5",
+   "ask": 20,
+   "p_model": 28.8,
+   "ev": 6.8,
+   "won": false,
+   "pnl_taker": -22,
+   "pnl_maker": -20,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-14",
+   "ticker": "KXHIGHNY-26JUL14-B90.5",
+   "ask": 12,
+   "p_model": 21.6,
+   "ev": 8.6,
+   "won": true,
+   "pnl_taker": 87,
+   "pnl_maker": 88,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-07-19",
+   "ticker": "KXHIGHNY-26JUL19-T80",
+   "ask": 36,
+   "p_model": 85.7,
+   "ev": 47.7,
+   "won": true,
+   "pnl_taker": 62,
+   "pnl_maker": 64,
+   "city": "nyc"
+  },
+  {
+   "date": "2026-06-15",
+   "ticker": "KXHIGHTLV-26JUN15-B108.5",
+   "ask": 33,
+   "p_model": 52.4,
+   "ev": 17.4,
+   "won": false,
+   "pnl_taker": -35,
+   "pnl_maker": -33,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-16",
+   "ticker": "KXHIGHTLV-26JUN16-B110.5",
+   "ask": 17,
+   "p_model": 32.2,
+   "ev": 14.2,
+   "won": false,
+   "pnl_taker": -18,
+   "pnl_maker": -17,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-17",
+   "ticker": "KXHIGHTLV-26JUN17-B106.5",
+   "ask": 23,
+   "p_model": 49.7,
+   "ev": 24.7,
+   "won": false,
+   "pnl_taker": -25,
+   "pnl_maker": -23,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-21",
+   "ticker": "KXHIGHTLV-26JUN21-B104.5",
+   "ask": 43,
+   "p_model": 52.4,
+   "ev": 7.4,
+   "won": false,
+   "pnl_taker": -45,
+   "pnl_maker": -43,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-22",
+   "ticker": "KXHIGHTLV-26JUN22-B107.5",
+   "ask": 17,
+   "p_model": 32.2,
+   "ev": 14.2,
+   "won": false,
+   "pnl_taker": -18,
+   "pnl_maker": -17,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-24",
+   "ticker": "KXHIGHTLV-26JUN24-T102",
+   "ask": 42,
+   "p_model": 61.6,
+   "ev": 17.6,
+   "won": true,
+   "pnl_taker": 56,
+   "pnl_maker": 58,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-25",
+   "ticker": "KXHIGHTLV-26JUN25-B107.5",
+   "ask": 23,
+   "p_model": 32.2,
+   "ev": 7.2,
+   "won": true,
+   "pnl_taker": 75,
+   "pnl_maker": 77,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-26",
+   "ticker": "KXHIGHTLV-26JUN26-B103.5",
+   "ask": 13,
+   "p_model": 32.2,
+   "ev": 18.2,
+   "won": true,
+   "pnl_taker": 86,
+   "pnl_maker": 87,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-27",
+   "ticker": "KXHIGHTLV-26JUN27-B95.5",
+   "ask": 41,
+   "p_model": 52.4,
+   "ev": 9.4,
+   "won": true,
+   "pnl_taker": 57,
+   "pnl_maker": 59,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-28",
+   "ticker": "KXHIGHTLV-26JUN28-B95.5",
+   "ask": 12,
+   "p_model": 32.2,
+   "ev": 19.2,
+   "won": false,
+   "pnl_taker": -13,
+   "pnl_maker": -12,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-29",
+   "ticker": "KXHIGHTLV-26JUN29-B95.5",
+   "ask": 18,
+   "p_model": 32.2,
+   "ev": 12.2,
+   "won": false,
+   "pnl_taker": -20,
+   "pnl_maker": -18,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-03",
+   "ticker": "KXHIGHTLV-26JUL03-B103.5",
+   "ask": 41,
+   "p_model": 52.4,
+   "ev": 9.4,
+   "won": false,
+   "pnl_taker": -43,
+   "pnl_maker": -41,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-04",
+   "ticker": "KXHIGHTLV-26JUL04-B105.5",
+   "ask": 27,
+   "p_model": 52.4,
+   "ev": 23.4,
+   "won": false,
+   "pnl_taker": -29,
+   "pnl_maker": -27,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-06",
+   "ticker": "KXHIGHTLV-26JUL06-B104.5",
+   "ask": 11,
+   "p_model": 24.1,
+   "ev": 12.1,
+   "won": false,
+   "pnl_taker": -12,
+   "pnl_maker": -11,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-08",
+   "ticker": "KXHIGHTLV-26JUL08-B107.5",
+   "ask": 16,
+   "p_model": 24.1,
+   "ev": 7.1,
+   "won": false,
+   "pnl_taker": -17,
+   "pnl_maker": -16,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-10",
+   "ticker": "KXHIGHTLV-26JUL10-B111.5",
+   "ask": 36,
+   "p_model": 52.4,
+   "ev": 14.4,
+   "won": false,
+   "pnl_taker": -38,
+   "pnl_maker": -36,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-15",
+   "ticker": "KXHIGHTLV-26JUL15-B109.5",
+   "ask": 38,
+   "p_model": 49.7,
+   "ev": 9.7,
+   "won": true,
+   "pnl_taker": 60,
+   "pnl_maker": 62,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-16",
+   "ticker": "KXHIGHTLV-26JUL16-B109.5",
+   "ask": 41,
+   "p_model": 52.4,
+   "ev": 9.4,
+   "won": false,
+   "pnl_taker": -43,
+   "pnl_maker": -41,
+   "city": "lv"
+  },
+  {
+   "date": "2026-07-17",
+   "ticker": "KXHIGHTLV-26JUL17-T99",
+   "ask": 67,
+   "p_model": 82.8,
+   "ev": 13.8,
+   "won": true,
+   "pnl_taker": 31,
+   "pnl_maker": 33,
+   "city": "lv"
+  },
+  {
+   "date": "2026-06-19",
+   "ticker": "KXHIGHCHI-26JUN19-B74.5",
+   "ask": 15,
+   "p_model": 26.6,
+   "ev": 10.6,
+   "won": false,
+   "pnl_taker": -16,
+   "pnl_maker": -15,
+   "city": "chi"
+  },
+  {
+   "date": "2026-06-20",
+   "ticker": "KXHIGHCHI-26JUN20-T78",
+   "ask": 19,
+   "p_model": 59.9,
+   "ev": 38.9,
+   "won": true,
+   "pnl_taker": 79,
+   "pnl_maker": 81,
+   "city": "chi"
+  },
+  {
+   "date": "2026-06-22",
+   "ticker": "KXHIGHCHI-26JUN22-B68.5",
+   "ask": 15,
+   "p_model": 28.8,
+   "ev": 12.8,
+   "won": false,
+   "pnl_taker": -16,
+   "pnl_maker": -15,
+   "city": "chi"
+  },
+  {
+   "date": "2026-06-23",
+   "ticker": "KXHIGHCHI-26JUN23-B70.5",
+   "ask": 21,
+   "p_model": 28.8,
+   "ev": 5.8,
+   "won": false,
+   "pnl_taker": -23,
+   "pnl_maker": -21,
+   "city": "chi"
+  },
+  {
+   "date": "2026-06-24",
+   "ticker": "KXHIGHCHI-26JUN24-T77",
+   "ask": 35,
+   "p_model": 59.9,
+   "ev": 22.9,
+   "won": true,
+   "pnl_taker": 63,
+   "pnl_maker": 65,
+   "city": "chi"
+  },
+  {
+   "date": "2026-06-26",
+   "ticker": "KXHIGHCHI-26JUN26-T70",
+   "ask": 47,
+   "p_model": 73.6,
+   "ev": 24.6,
+   "won": true,
+   "pnl_taker": 51,
+   "pnl_maker": 53,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-01",
+   "ticker": "KXHIGHCHI-26JUL01-B97.5",
+   "ask": 14,
+   "p_model": 28.8,
+   "ev": 13.8,
+   "won": false,
+   "pnl_taker": -15,
+   "pnl_maker": -14,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-04",
+   "ticker": "KXHIGHCHI-26JUL04-T85",
+   "ask": 36,
+   "p_model": 59.9,
+   "ev": 21.9,
+   "won": false,
+   "pnl_taker": -38,
+   "pnl_maker": -36,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-05",
+   "ticker": "KXHIGHCHI-26JUL05-T79",
+   "ask": 71,
+   "p_model": 88.3,
+   "ev": 15.3,
+   "won": true,
+   "pnl_taker": 27,
+   "pnl_maker": 29,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-09",
+   "ticker": "KXHIGHCHI-26JUL09-T84",
+   "ask": 45,
+   "p_model": 59.9,
+   "ev": 12.9,
+   "won": false,
+   "pnl_taker": -47,
+   "pnl_maker": -45,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-10",
+   "ticker": "KXHIGHCHI-26JUL10-B79.5",
+   "ask": 20,
+   "p_model": 28.8,
+   "ev": 6.8,
+   "won": false,
+   "pnl_taker": -22,
+   "pnl_maker": -20,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-13",
+   "ticker": "KXHIGHCHI-26JUL13-T94",
+   "ask": 13,
+   "p_model": 55.2,
+   "ev": 41.2,
+   "won": false,
+   "pnl_taker": -14,
+   "pnl_maker": -13,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-14",
+   "ticker": "KXHIGHCHI-26JUL14-B98.5",
+   "ask": 20,
+   "p_model": 30.2,
+   "ev": 8.2,
+   "won": false,
+   "pnl_taker": -22,
+   "pnl_maker": -20,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-17",
+   "ticker": "KXHIGHCHI-26JUL17-B93.5",
+   "ask": 13,
+   "p_model": 28.8,
+   "ev": 14.8,
+   "won": true,
+   "pnl_taker": 86,
+   "pnl_maker": 87,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-18",
+   "ticker": "KXHIGHCHI-26JUL18-B93.5",
+   "ask": 17,
+   "p_model": 26.6,
+   "ev": 8.6,
+   "won": false,
+   "pnl_taker": -18,
+   "pnl_maker": -17,
+   "city": "chi"
+  },
+  {
+   "date": "2026-07-19",
+   "ticker": "KXHIGHCHI-26JUL19-B78.5",
+   "ask": 15,
+   "p_model": 26.6,
+   "ev": 10.6,
+   "won": true,
+   "pnl_taker": 84,
+   "pnl_maker": 85,
+   "city": "chi"
+  }
+ ]
+}

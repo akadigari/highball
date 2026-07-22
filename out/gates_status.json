@@ -32,5 +32,13 @@
   ],
   "extended_d1c_over_47": []
  },
- "snapshot_days": 1
+ "snapshot_days": 1,
+ "replay": {
+  "what": "held-out accuracy proof: beliefs frozen 2026-06-15, replayed to 2026-07-20 on real candle asks",
+  "entries": 50,
+  "pnl_taker_cents": 389,
+  "pnl_maker_cents": 472,
+  "note": "all 3 cities non-negative; picked entries 5-13pp overconfident (winner's curse), fix registered for G1; not significant at n=50, verdict clock starts at G1",
+  "source": "lab/REPLAY.md"
+ }
 }
