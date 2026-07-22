@@ -1,4 +1,4 @@
-"""Shared helpers for the vane lab. Keyless public data only.
+"""Shared helpers for the highball lab. Keyless public data only.
 
 All network work goes through curl because the framework python on this
 machine has no SSL certificates wired up. Every fetch is cached on disk

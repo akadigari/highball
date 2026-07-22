@@ -1,4 +1,4 @@
-# vane
+# highball
 
 The weather desk. Predicts tomorrow's official high temperature for the
 cities Kalshi runs daily markets on, turns those predictions into sim

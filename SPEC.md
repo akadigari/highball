@@ -1,11 +1,17 @@
-# VANE, the spec
+# HIGHBALL, the spec
 
 Committed before any build, per the architecture-first rule. The lab
-and the bot get built to this document, not to chat.
+and the desk get built to this document, not to chat.
+
+This is not a script that follows one rule. It is an AI being
+trained: it learns each station's error shape from every settlement,
+prices every band from what it has learned, and its ledger is the
+training record. The words "bot" and "paper" stay out of everything
+public; it is the desk AI, and it trades sim.
 
 ## Goal
 
-Answer, with receipts, whether a keyless-data weather bot can beat
+Answer, with receipts, whether a keyless-data AI can beat
 Kalshi's daily high temperature markets on sim, and if it can, run it
 as a live sim desk that knaves can render as a card.
 
@@ -21,7 +27,7 @@ Three questions the lab must answer with numbers:
 The July 18 scout sweep already scored this family (candidate 13,
 "Kalshi weather microstructure") a 6/10 PLAUSIBLE with this catch:
 plain forecast-following is crowded, public model-vs-market tools
-already exist. So vane does not claim the naive edge. The lab measures
+already exist. So highball does not claim the naive edge. The lab measures
 it anyway (it is the baseline), but the desk only goes live if the
 numbers clear the gates below. A dead verdict still becomes a knaves
 card. Dead cards are content.
@@ -124,7 +130,7 @@ The desk advances to Phase S only if, on Study 1:
   Study 2 shows a morning-of entry still gets average asks of 60
   cents or less.
 
-If neither passes, vane stays a lab, the verdict is written into
+If neither passes, highball stays a lab, the verdict is written into
 RESULTS.md, and the knaves card is born dead with the numbers shown.
 
 ## Phase S: snapshots (only if G0 passes)
@@ -162,16 +168,16 @@ in at least 3 cities. Then and only then the sim ledger starts.
 
 ## The knaves seat
 
-vane is built receipts-first so knaves can render it without a single
+highball is built receipts-first so knaves can render it without a single
 hand-typed number:
 
 - out/gates_status.json: current phase, each gate, pass or fail or
   pending, with the numbers.
 - data/ledger.csv once Phase B starts, plus out/heartbeat.json from
   the cron.
-- knaves gets cards/vane.yml pointing at those artifacts. Status
+- knaves gets cards/highball.yml pointing at those artifacts. Status
   chip: LAB until G0, COLLECTING in Phase S, ALIVE or DEAD after
-  verdicts. A dead vane card ships anyway.
+  verdicts. A dead highball card ships anyway.
 
 ## Parked for later phases, on purpose
 
@@ -257,6 +263,28 @@ Phase S or Phase B are built:
 - The two links that started this project (weatherbot.bot and the
   reddit 500-bot thread) survived zero verification. Nothing from
   them enters this spec.
+
+## Owner directives, 2026-07-22 night (phase 2 build)
+
+- The name is highball. Renamed from vane, history preserved.
+- The sim desk runs from day one so the AI accrues training data
+  immediately. The G2 verdict clock still only counts trades made
+  after G1 passes, so verdict discipline is unchanged; everything
+  earlier is training tape, labeled as such in the ledger.
+- Training loop v1, defined: the AI's beliefs are per-city error
+  distributions (by lead and season) plus a trailing 30-day bias
+  term. Every settlement appends a new error observation and the
+  beliefs update on the next run. That is the training: continuous,
+  causal, no lookahead, receipts in model/history.csv.
+- Ledger carries two P&L columns: pnl_taker (headline, fill at ask,
+  quadratic fee) and pnl_maker (same fill price, zero fee). The
+  maker column isolates the verified fee edge only; it claims
+  nothing about queue position. Real spread capture gets measured at
+  G1 from snapshot books.
+- Accuracy is proven by replay before the cron ever runs: the engine
+  must reproduce profitable-city behavior on held-out recent days it
+  never trained on, using real candle asks. The replay report is a
+  committed artifact.
 
 ## Rollout
 
