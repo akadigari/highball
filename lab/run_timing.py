@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 
 import wx
 
-CITY_KEYS = ["nyc", "den", "mia"]
+CITY_KEYS = ["nyc", "den", "mia", "lv", "chi"]
 LOOKBACK_DAYS = 65
 START = "2024-04-01"
 END = "2026-07-20"

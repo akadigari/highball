@@ -1,0 +1,418 @@
+{
+ "nyc": {
+  "series": "KXHIGHNY",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.2537,
+   "mae": 3.35
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.4328,
+   "mae": 1.78
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.2537,
+   "mae": 3.67
+  },
+  "warm_d1_hit": 0.2537,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.3433
+ },
+ "den": {
+  "series": "KXHIGHDEN",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3433,
+   "mae": 2.17
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5075,
+   "mae": 1.41
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.403,
+   "mae": 2.06
+  },
+  "warm_d1_hit": 0.3433,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.2388
+ },
+ "chi": {
+  "series": "KXHIGHCHI",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3134,
+   "mae": 2.39
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.6269,
+   "mae": 1.1
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.3134,
+   "mae": 2.66
+  },
+  "warm_d1_hit": 0.3134,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1791
+ },
+ "aus": {
+  "series": "KXHIGHAUS",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.2985,
+   "mae": 2.16
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.2687,
+   "mae": 1.95
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.2687,
+   "mae": 2.81
+  },
+  "warm_d1_hit": 0.2985,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1194
+ },
+ "mia": {
+  "series": "KXHIGHMIA",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.2388,
+   "mae": 1.88
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.3582,
+   "mae": 1.35
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.4478,
+   "mae": 1.08
+  },
+  "warm_d1_hit": 0.2388,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.0896
+ },
+ "lax": {
+  "series": "KXHIGHLAX",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.209,
+   "mae": 2.24
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.597,
+   "mae": 0.83
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.2836,
+   "mae": 2.02
+  },
+  "warm_d1_hit": 0.209,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.0746
+ },
+ "phl": {
+  "series": "KXHIGHPHIL",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3433,
+   "mae": 2.04
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.2687,
+   "mae": 2.14
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.209,
+   "mae": 3.16
+  },
+  "warm_d1_hit": 0.3433,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1194
+ },
+ "dc": {
+  "series": "KXHIGHTDC",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3731,
+   "mae": 1.97
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5672,
+   "mae": 1.1
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.1791,
+   "mae": 3.05
+  },
+  "warm_d1_hit": 0.3731,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1642
+ },
+ "lv": {
+  "series": "KXHIGHTLV",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.6119,
+   "mae": 0.98
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.3881,
+   "mae": 1.3
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.4179,
+   "mae": 1.81
+  },
+  "warm_d1_hit": 0.6119,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.0299
+ },
+ "dal": {
+  "series": "KXHIGHTDAL",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3134,
+   "mae": 2.59
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5672,
+   "mae": 1.24
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.209,
+   "mae": 2.74
+  },
+  "warm_d1_hit": 0.3134,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1194
+ },
+ "bos": {
+  "series": "KXHIGHTBOS",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.4328,
+   "mae": 2.33
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5373,
+   "mae": 1.02
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.194,
+   "mae": 5.13
+  },
+  "warm_d1_hit": 0.4328,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.2836
+ },
+ "sea": {
+  "series": "KXHIGHTSEA",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.1642,
+   "mae": 2.82
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.4627,
+   "mae": 1.15
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.2985,
+   "mae": 3.12
+  },
+  "warm_d1_hit": 0.1642,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1045
+ },
+ "atl": {
+  "series": "KXHIGHTATL",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.2687,
+   "mae": 2.46
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.2836,
+   "mae": 1.98
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.209,
+   "mae": 3.21
+  },
+  "warm_d1_hit": 0.2687,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.0746
+ },
+ "sat": {
+  "series": "KXHIGHTSATX",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3731,
+   "mae": 2.02
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5224,
+   "mae": 1.06
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.194,
+   "mae": 3.15
+  },
+  "warm_d1_hit": 0.3731,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1642
+ },
+ "nola": {
+  "series": "KXHIGHTNOLA",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.3284,
+   "mae": 2.42
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.4776,
+   "mae": 1.32
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.1343,
+   "mae": 3.37
+  },
+  "warm_d1_hit": 0.3284,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.1194
+ },
+ "okc": {
+  "series": "KXHIGHTOKC",
+  "anomalies": {
+   "no_single_winner": 0,
+   "acis_mismatch": 0
+  },
+  "days": 67,
+  "d1": {
+   "n": 67,
+   "hit": 0.2985,
+   "mae": 2.54
+  },
+  "d0": {
+   "n": 67,
+   "hit": 0.5373,
+   "mae": 1.1
+  },
+  "d2": {
+   "n": 67,
+   "hit": 0.1343,
+   "mae": 4.04
+  },
+  "warm_d1_hit": 0.2985,
+  "cold_d1_hit": null,
+  "tail_settle_rate": 0.2388
+ }
+}

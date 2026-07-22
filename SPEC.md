@@ -184,6 +184,33 @@ hand-typed number:
   (public data is readable from MD even though trading is blocked).
 - Any learning loop beyond the empirical error table.
 
+## Lab addendum, 2026-07-22, committed before the extended run
+
+Found while building. Written down before the extended numbers were
+seen, so the gates stay honest:
+
+1. The markets endpoint only returns about the last 67 days of
+   settled weather markets no matter how you page it. The events
+   endpoint pages all the way back to series birth (NYC reaches
+   August 2021) and carries the same bands and results nested. The
+   lab now reads events. The first short-window run stays in git
+   history.
+2. The same-day model run reads systematically cold at hot stations
+   (Vegas, Austin, Philadelphia, Atlanta in the short window),
+   because hourly model values undershoot the true continuous daily
+   max. The lab therefore also reports a walk-forward corrected
+   forecast: raw forecast plus the trailing 30-day mean error, known
+   by the night before, minimum 10 samples, no peeking. The G0 gate
+   still judges the RAW lead-1 number exactly as registered. The
+   corrected number is evidence for the Phase B model, not a gate.
+3. Band parity is not stable per city, so there is no honest way to
+   simulate bands for days the exchange did not list. Real bands
+   only, which caps the join at the forecast archive's start (early
+   2024) rather than the exchange's (2021).
+4. Study 2 grows from 3 cities to 5: adds Las Vegas (the
+   short-window accuracy leader) and Chicago (a morning-of
+   candidate).
+
 ## Rollout
 
 1. Commit this spec.

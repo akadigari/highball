@@ -63,35 +63,48 @@ def fetch(url, post_json=None, tries=3):
 
 
 def settled_markets(series):
-    """Every settled market in a series, paged with the cursor."""
-    markets, cursor = [], ""
+    """Every settled market in a series, walked through /events.
+
+    The markets endpoint only retains about 67 days. Events page back
+    to series birth (NYC reaches August 2021), legacy pre-rename
+    tickers included, with bands and results nested.
+    """
+    out, cursor, pages = [], "", 0
     while True:
-        url = BASE + "/markets?series_ticker=" + series + "&status=settled&limit=1000"
+        url = (BASE + "/events?series_ticker=" + series +
+               "&status=settled&limit=200&with_nested_markets=true")
         if cursor:
             url += "&cursor=" + cursor
         d = fetch(url)
-        markets += d.get("markets", [])
+        evs = d.get("events", [])
+        for ev in evs:
+            date = ticker_date(ev.get("event_ticker", ""))
+            for m in ev.get("markets") or []:
+                m["_date"] = date
+                out.append(m)
         cursor = d.get("cursor") or ""
-        if not cursor:
+        pages += 1
+        if not cursor or not evs or pages > 40:
             break
-    return markets
+    return out
 
 
-def market_date(ticker):
-    """KXHIGHNY-26JUL21-B81.5 -> 2026-07-21. The date names the climate day."""
-    part = ticker.split("-")[1]
-    return datetime.datetime.strptime(part, "%y%b%d").date().isoformat()
+def ticker_date(ticker):
+    """KXHIGHNY-26JUL21 or HIGHNY-21AUG06 -> the climate day it names."""
+    try:
+        part = ticker.split("-")[1]
+        return datetime.datetime.strptime(part, "%y%b%d").date().isoformat()
+    except Exception:
+        return None
 
 
 def by_day(markets):
     """Group a series' settled markets into {date: [markets]}."""
     days = {}
     for m in markets:
-        try:
-            d = market_date(m["ticker"])
-        except Exception:
-            continue
-        days.setdefault(d, []).append(m)
+        d = m.get("_date") or ticker_date(m.get("ticker", ""))
+        if d:
+            days.setdefault(d, []).append(m)
     return days
 
 

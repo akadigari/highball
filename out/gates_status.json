@@ -1,0 +1,23 @@
+{
+ "updated": "2026-07-22T20:06:42+00:00",
+ "phase": "LAB",
+ "g0": {
+  "pass_a": {
+   "rule": ">=2 cities with n>=200 and lead-1 hit >= 0.47",
+   "cities": [],
+   "passed": false
+  },
+  "pass_b": {
+   "rule": ">=2 cities lead-0 hit >= 0.55 AND study-2 morning asks <= 60c",
+   "cities": [
+    "chi",
+    "lax",
+    "dc",
+    "dal"
+   ],
+   "passed": null,
+   "note": "ask condition filled in by run_timing.py"
+  },
+  "verdict": "PENDING"
+ }
+}
