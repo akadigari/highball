@@ -18,11 +18,17 @@
    "passed": null,
    "note": "ask condition filled in by run_timing.py"
   },
-  "verdict": "PENDING"
+  "verdict": "PENDING",
+  "pass_a2": {
+   "rule": ">=2 cities with n>=200 and 840-day formula d1 hit_est >= 0.47 (spec addendum 6)",
+   "cities": [],
+   "passed": false
+  }
  },
  "evidence_not_gate": {
   "d1_corrected_cities_over_47": [
    "lv"
-  ]
+  ],
+  "extended_d1c_over_47": []
  }
 }
