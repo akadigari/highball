@@ -230,6 +230,34 @@ seen, so the gates stay honest:
    disagreements with Kalshi settlement across 1072 city-days in the
    retention window.
 
+## Research addendum, 2026-07-22, after the verified sweep
+
+RESEARCH.md holds the receipts. Design consequences, committed before
+Phase S or Phase B are built:
+
+- Phase B model v1 targets the OVERDISPERSION trade, not only the
+  forecast band: price every listed band from the empirical error
+  distribution and buy any band whose model probability beats ask
+  plus fee plus a 5 cent margin. The lone verified live track record
+  (1,038 trades, Sharpe 2.2) wins by buying underpriced sub-50c
+  central buckets, average entry 27c.
+- Longshot filter, hard rule: never buy a band asking under 10c
+  without a named signal. The favorite-longshot bias is confirmed
+  inside the weather category at p=0.000.
+- Maker-first execution: weather series charge zero maker fees
+  (verified live 2026-07-22), so the sim logs BOTH fill assumptions,
+  taker (conservative headline) and resting-order maker (the real
+  route), and reports them side by side.
+- Phase S aggregates the climate day on LOCAL STANDARD TIME. During
+  daylight saving the day runs 1:00 AM to 12:59 AM local. The
+  earlier "accepted as noise" note is upgraded to a fix.
+- Go-live floor adopted from ventry089/weatherbot: no verdict counts
+  before at least 2 weeks and 50 settled sim trades. Our G1 and G2
+  already exceed this; stated so the floor is explicit.
+- The two links that started this project (weatherbot.bot and the
+  reddit 500-bot thread) survived zero verification. Nothing from
+  them enters this spec.
+
 ## Rollout
 
 1. Commit this spec.
