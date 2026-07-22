@@ -38,12 +38,16 @@ CITIES = {
 }
 
 
-def fetch(url, post_json=None, tries=3):
-    """GET (or POST json) a url with curl, cache the parsed result forever."""
+def fetch(url, post_json=None, tries=3, fresh=False):
+    """GET (or POST json) a url with curl, cache the parsed result.
+
+    fresh=True skips the cache both ways: the live desk must see the
+    market as it is now, not as it was when the lab ran.
+    """
     os.makedirs(CACHE, exist_ok=True)
     key = hashlib.md5((url + (json.dumps(post_json) if post_json else "")).encode()).hexdigest()
     path = os.path.join(CACHE, key + ".json")
-    if os.path.exists(path):
+    if not fresh and os.path.exists(path):
         with open(path) as f:
             return json.load(f)
     cmd = ["curl", "-s", "--max-time", "90", url]
@@ -53,8 +57,9 @@ def fetch(url, post_json=None, tries=3):
         out = subprocess.run(cmd, capture_output=True, text=True)
         try:
             data = json.loads(out.stdout)
-            with open(path, "w") as f:
-                json.dump(data, f)
+            if not fresh:
+                with open(path, "w") as f:
+                    json.dump(data, f)
             time.sleep(0.15)
             return data
         except Exception:

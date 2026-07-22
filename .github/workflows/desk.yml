@@ -1,0 +1,29 @@
+name: desk
+# Four runs a day, all UTC. 00:15 catches the evening entry window for
+# eastern and central cities, 03:15 for mountain and pacific, 13:00
+# settles yesterday and covers eastern mornings, 17:30 checks exits.
+on:
+  schedule:
+    - cron: "15 0 * * *"
+    - cron: "15 3 * * *"
+    - cron: "0 13 * * *"
+    - cron: "30 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run the desk
+        run: python3 desk.py
+      - name: commit the receipts
+        run: |
+          git config user.name "highball-desk"
+          git config user.email "desk@users.noreply.github.com"
+          git add data out model/history.csv
+          git diff --cached --quiet || git commit -m "desk run: snapshots, ledger, training tape"
+          git push

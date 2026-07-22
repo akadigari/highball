@@ -1,6 +1,6 @@
 {
  "updated": "2026-07-22T20:11:32+00:00",
- "phase": "LAB",
+ "phase": "S",
  "g0": {
   "pass_a": {
    "rule": ">=2 cities with n>=200 and lead-1 hit >= 0.47",
@@ -31,5 +31,6 @@
    "lv"
   ],
   "extended_d1c_over_47": []
- }
+ },
+ "snapshot_days": 1
 }
