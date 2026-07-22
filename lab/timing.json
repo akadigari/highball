@@ -1,0 +1,152 @@
+{
+ "nyc": {
+  "n_days": 65,
+  "eve20": {
+   "n": 65,
+   "avg_ask": 28.5,
+   "win_rate": 0.262,
+   "hold_pnl_per_contract": -3.78,
+   "sell85_pnl_per_contract": -5.0
+  },
+  "morn9": {
+   "n": 64,
+   "avg_ask": 30.0,
+   "win_rate": 0.25,
+   "hold_pnl_per_contract": -6.47,
+   "sell85_pnl_per_contract": -6.97
+  },
+  "noon12": {
+   "n": 61,
+   "avg_ask": 26.4,
+   "win_rate": 0.213,
+   "hold_pnl_per_contract": -6.46,
+   "sell85_pnl_per_contract": -6.61
+  },
+  "winner_ask_eve": {
+   "n": 65,
+   "median": 36,
+   "pct_le_15c": 0.077,
+   "pct_le_25c": 0.2
+  }
+ },
+ "den": {
+  "n_days": 65,
+  "eve20": {
+   "n": 65,
+   "avg_ask": 34.7,
+   "win_rate": 0.354,
+   "hold_pnl_per_contract": -1.17,
+   "sell85_pnl_per_contract": -1.34
+  },
+  "morn9": {
+   "n": 65,
+   "avg_ask": 36.5,
+   "win_rate": 0.354,
+   "hold_pnl_per_contract": -2.78,
+   "sell85_pnl_per_contract": -2.95
+  },
+  "noon12": {
+   "n": 65,
+   "avg_ask": 36.6,
+   "win_rate": 0.354,
+   "hold_pnl_per_contract": -2.8,
+   "sell85_pnl_per_contract": -3.97
+  },
+  "winner_ask_eve": {
+   "n": 65,
+   "median": 37,
+   "pct_le_15c": 0.077,
+   "pct_le_25c": 0.231
+  }
+ },
+ "mia": {
+  "n_days": 65,
+  "eve20": {
+   "n": 65,
+   "avg_ask": 34.6,
+   "win_rate": 0.246,
+   "hold_pnl_per_contract": -11.77,
+   "sell85_pnl_per_contract": -11.34
+  },
+  "morn9": {
+   "n": 65,
+   "avg_ask": 35.8,
+   "win_rate": 0.246,
+   "hold_pnl_per_contract": -13.0,
+   "sell85_pnl_per_contract": -12.57
+  },
+  "noon12": {
+   "n": 65,
+   "avg_ask": 33.0,
+   "win_rate": 0.246,
+   "hold_pnl_per_contract": -10.02,
+   "sell85_pnl_per_contract": -9.58
+  },
+  "winner_ask_eve": {
+   "n": 65,
+   "median": 42,
+   "pct_le_15c": 0.108,
+   "pct_le_25c": 0.215
+  }
+ },
+ "lv": {
+  "n_days": 65,
+  "eve20": {
+   "n": 65,
+   "avg_ask": 53.2,
+   "win_rate": 0.631,
+   "hold_pnl_per_contract": 7.91,
+   "sell85_pnl_per_contract": 2.85
+  },
+  "morn9": {
+   "n": 65,
+   "avg_ask": 56.5,
+   "win_rate": 0.631,
+   "hold_pnl_per_contract": 4.65,
+   "sell85_pnl_per_contract": -0.42
+  },
+  "noon12": {
+   "n": 65,
+   "avg_ask": 56.1,
+   "win_rate": 0.631,
+   "hold_pnl_per_contract": 5.15,
+   "sell85_pnl_per_contract": 0.09
+  },
+  "winner_ask_eve": {
+   "n": 65,
+   "median": 56,
+   "pct_le_15c": 0.062,
+   "pct_le_25c": 0.138
+  }
+ },
+ "chi": {
+  "n_days": 65,
+  "eve20": {
+   "n": 65,
+   "avg_ask": 28.5,
+   "win_rate": 0.323,
+   "hold_pnl_per_contract": 2.11,
+   "sell85_pnl_per_contract": 3.94
+  },
+  "morn9": {
+   "n": 65,
+   "avg_ask": 31.5,
+   "win_rate": 0.323,
+   "hold_pnl_per_contract": -0.77,
+   "sell85_pnl_per_contract": 1.08
+  },
+  "noon12": {
+   "n": 65,
+   "avg_ask": 32.0,
+   "win_rate": 0.323,
+   "hold_pnl_per_contract": -1.15,
+   "sell85_pnl_per_contract": 0.98
+  },
+  "winner_ask_eve": {
+   "n": 65,
+   "median": 35,
+   "pct_le_15c": 0.138,
+   "pct_le_25c": 0.292
+  }
+ }
+}

@@ -15,10 +15,11 @@
     "dc",
     "dal"
    ],
-   "passed": null,
-   "note": "ask condition filled in by run_timing.py"
+   "passed": true,
+   "note": "ask condition filled in by run_timing.py",
+   "avg_morning_ask": 38.1
   },
-  "verdict": "PENDING",
+  "verdict": "PASS_B",
   "pass_a2": {
    "rule": ">=2 cities with n>=200 and 840-day formula d1 hit_est >= 0.47 (spec addendum 6)",
    "cities": [],

@@ -72,7 +72,10 @@ def main():
                 continue
             t_open = local_ts(date, 0, cfg["tz"], -1)
             t_end = local_ts(date, 23, cfg["tz"])
-            cs = wx.candles(cfg["series"], band["ticker"], t_open, t_end + 7200)
+            try:
+                cs = wx.candles(cfg["series"], band["ticker"], t_open, t_end + 7200)
+            except RuntimeError:
+                continue
             won = band.get("result") == "yes"
 
             for name, (off, hh) in {"eve20": (-1, 20), "morn9": (0, 9), "noon12": (0, 12)}.items():
@@ -91,8 +94,11 @@ def main():
                                       "hold": hold, "sell85": sell})
 
             # what did the eventual winner cost the night before
-            wcs = cs if winner["ticker"] == band["ticker"] else wx.candles(
-                cfg["series"], winner["ticker"], t_open, t_end + 7200)
+            try:
+                wcs = cs if winner["ticker"] == band["ticker"] else wx.candles(
+                    cfg["series"], winner["ticker"], t_open, t_end + 7200)
+            except RuntimeError:
+                wcs = []
             wask = quote_at(wcs, local_ts(date, 20, cfg["tz"], -1), "yes_ask")
             if wask is not None and 0 < wask < 100:
                 longshot.append(wask)
