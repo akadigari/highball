@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-22T20:06:42+00:00",
+ "updated": "2026-07-22T20:11:32+00:00",
  "phase": "LAB",
  "g0": {
   "pass_a": {
@@ -19,5 +19,10 @@
    "note": "ask condition filled in by run_timing.py"
   },
   "verdict": "PENDING"
+ },
+ "evidence_not_gate": {
+  "d1_corrected_cities_over_47": [
+   "lv"
+  ]
  }
 }

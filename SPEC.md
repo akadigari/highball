@@ -210,6 +210,25 @@ seen, so the gates stay honest:
 4. Study 2 grows from 3 cities to 5: adds Las Vegas (the
    short-window accuracy leader) and Chicago (a morning-of
    candidate).
+5. The retention wall covers market detail too. Event shells go back
+   to 2021, but bands and results only attach for about the last 67
+   days, and event-scoped queries return empty markets past that.
+   Same lesson as the trades firehose: history has to be archived by
+   us, starting now. Phase S snapshots are therefore also the
+   archiver.
+6. Because real-band n >= 200 is unreachable from a cold start, G0
+   gets evaluated two ways, both reported: the registered PASS A on
+   real bands with its small n stated plainly, and an amended PASS
+   A2 on the 2024-04 to 2026-07 formula estimate
+   hit_est = P(e = 0) + 0.5 x P(|e| = 1), where e is the official
+   ACIS high minus the rounded forecast. The half weight is the
+   expected hit under the observed 50/50 band parity mix. The
+   formula is validated against the real-band window first and the
+   validation gap is printed next to every use. Threshold stays 47
+   percent in two or more cities, committed here before the extended
+   numbers were computed. ACIS earned truth status: zero
+   disagreements with Kalshi settlement across 1072 city-days in the
+   retention window.
 
 ## Rollout
 
