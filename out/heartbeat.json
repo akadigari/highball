@@ -1,10 +1,10 @@
 {
- "ts": "2026-07-23T06:09:26+00:00",
- "opened": 0,
+ "ts": "2026-07-23T15:01:58+00:00",
+ "opened": 4,
  "closed": 0,
  "settled": 0,
- "trained": 0,
- "open_positions": 4,
- "ledger_rows": 4,
+ "trained": 16,
+ "open_positions": 8,
+ "ledger_rows": 8,
  "snapshot_days": 2
 }
