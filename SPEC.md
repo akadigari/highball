@@ -286,6 +286,26 @@ Phase S or Phase B are built:
   never trained on, using real candle asks. The replay report is a
   committed artifact.
 
+## Addendum 7, 2026-07-22 late: prior art and adopted rules
+
+The hunt found the owner's earlier weather lab (see PRIORART.md).
+Standing rules adopted from it, effective immediately:
+
+- Timing robustness: no price-based result is claimed anywhere until
+  its sign survives re-pricing at at least three other hours. The
+  replay passed this on 2026-07-22 (lab/ROBUSTNESS.md).
+- G1 analysis must compare the model's Brier score to the market's
+  own. A model that loses on Brier but wins on divergences is
+  presumed to be an artifact.
+- The 10c longshot floor gets re-examined against the old lab's 15c
+  fee-death argument at G1, using captured spreads.
+- Speed plays and post-peak sniping are closed questions (killed in
+  prior art with data); they leave the parked list and enter the
+  graveyard unless new evidence appears.
+- mm_bot already quotes weather series as preferred venues; its
+  quoting engine is the natural execution layer for the maker route.
+  Evaluate the pairing at G1, not before.
+
 ## Rollout
 
 1. Commit this spec.

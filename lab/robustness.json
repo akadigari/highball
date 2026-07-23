@@ -1,0 +1,27 @@
+{
+ "eve17": {
+  "n": 50,
+  "pnl_taker": 341,
+  "pnl_maker": 429,
+  "avg_ask": 31.4
+ },
+ "eve20": {
+  "n": 50,
+  "pnl_taker": 389,
+  "pnl_maker": 472,
+  "avg_ask": 30.6
+ },
+ "eve22": {
+  "n": 50,
+  "pnl_taker": 337,
+  "pnl_maker": 421,
+  "avg_ask": 31.6
+ },
+ "morn9": {
+  "n": 50,
+  "pnl_taker": 299,
+  "pnl_maker": 380,
+  "avg_ask": 32.4
+ },
+ "verdict": "SIGN STABLE across hours"
+}
