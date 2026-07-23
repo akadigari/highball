@@ -98,6 +98,28 @@ class TestExit(unittest.TestCase):
         self.assertFalse(engine.should_exit(92, 95.0, 14)[0])
 
 
+class TestFillWalk(unittest.TestCase):
+    def test_single_level_full_fill(self):
+        vwap, filled = engine.fill_walk([(30, 500)], 100)
+        self.assertEqual((vwap, filled), (30.0, 100))
+
+    def test_walks_levels_and_averages(self):
+        vwap, filled = engine.fill_walk([(30, 60), (32, 100)], 100)
+        self.assertEqual(filled, 100)
+        self.assertAlmostEqual(vwap, (60 * 30 + 40 * 32) / 100)
+
+    def test_partial_fill_stays_partial(self):
+        vwap, filled = engine.fill_walk([(30, 25)], 100)
+        self.assertEqual((vwap, filled), (30.0, 25))
+
+    def test_limit_price_refuses_chase(self):
+        vwap, filled = engine.fill_walk([(30, 60), (40, 100)], 100, limit_price=35)
+        self.assertEqual((vwap, filled), (30.0, 60))
+
+    def test_empty_book(self):
+        self.assertEqual(engine.fill_walk([], 100), (None, 0))
+
+
 class TestPnl(unittest.TestCase):
     def test_hold_win_and_loss(self):
         taker, maker = engine.entry_pnl(53, True)

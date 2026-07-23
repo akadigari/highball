@@ -1,0 +1,5 @@
+ts,city,event_date,ticker,action,price_c,fill_vwap_c,filled_qty,qty,fee_c,p_model,ev_c,pnl_taker_c,pnl_maker_c,clv_c,phase_label,note
+2026-07-23T00:40:27+00:00,nyc,2026-07-23,KXHIGHNY-26JUL23-T79,OPEN,15,15.0,100,100,1,65.8,49.8,,,,training,d1
+2026-07-23T00:40:27+00:00,mia,2026-07-23,KXHIGHMIA-26JUL23-B94.5,OPEN,14,14.53,100,100,1,38.8,23.8,,,,training,d1
+2026-07-23T00:40:27+00:00,bos,2026-07-23,KXHIGHTBOS-26JUL23-B82.5,OPEN,11,12.8,100,100,1,24.0,12.0,,,,training,d1
+2026-07-23T00:40:27+00:00,atl,2026-07-23,KXHIGHTATL-26JUL23-B92.5,OPEN,12,12.0,100,100,1,23.0,10.0,,,,training,d1

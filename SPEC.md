@@ -306,6 +306,32 @@ Standing rules adopted from it, effective immediately:
   quoting engine is the natural execution layer for the maker route.
   Evaluate the pairing at G1, not before.
 
+## Addendum 8, 2026-07-22 latest: sim fidelity, defined
+
+"Accurate sim" means every fill could have happened. Rules now built
+and tested:
+
+- Entries and exits fill against the LIVE order book, walking real
+  depth levels. Partial fills stay partial. The desk never chases
+  more than 5 cents past its decision price. The decision quote, the
+  volume-weighted fill, the filled size, and the implied slippage are
+  all separate ledger columns.
+- Fees are the exact Kalshi formula on the fill price, rounded up,
+  unit-tested against known values.
+- Every settlement row records CLV: the fill versus the last
+  snapshot mid before close. A desk that beats the close has real
+  price skill even before profit is significant.
+- Every snapshot stamps the model probability on every band next to
+  the market's bid and ask, so Brier-vs-market is computable for any
+  window without reconstruction.
+- No lookahead, proven not promised: beliefs are frozen files with a
+  built_through date, the replay trades only later days, and the
+  timing-robustness check re-prices every claim at other hours.
+- Remaining known gaps, stated: sim cannot know real queue position
+  (so maker fills are never claimed, only the fee delta), and the
+  cron sees the book a few times a day, not continuously. Both are
+  conservative directions.
+
 ## Rollout
 
 1. Commit this spec.

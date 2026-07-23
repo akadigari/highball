@@ -123,3 +123,30 @@ def sell_pnl(ask, bid):
     taker = bid - ask - taker_fee_cents(ask) - taker_fee_cents(bid)
     maker = bid - ask
     return taker, maker
+
+
+SLIPPAGE_CAP = 5  # never chase more than this past the decision price
+
+
+def fill_walk(levels, qty, limit_price=None):
+    """Walk the real book like a real order would.
+
+    levels: [(price_cents, size), ...] best price first (asks ascending
+    to buy, bids descending to sell). Fills up to qty, refusing any
+    level past limit_price. Returns (vwap_cents, filled_qty). A sim
+    fill is only as honest as the depth it consumed, so partial fills
+    are returned as partial, never rounded up.
+    """
+    filled = 0
+    cost = 0.0
+    for price, size in levels:
+        if limit_price is not None and price > limit_price:
+            break
+        take = min(size, qty - filled)
+        if take <= 0:
+            break
+        filled += take
+        cost += take * price
+    if filled == 0:
+        return None, 0
+    return round(cost / filled, 2), filled

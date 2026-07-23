@@ -33,8 +33,36 @@ HISTORY = os.path.join(HERE, "model", "history.csv")
 TABLES = os.path.join(HERE, "model", "error_tables.json")
 
 LEDGER_COLS = ["ts", "city", "event_date", "ticker", "action", "price_c",
-               "qty", "fee_c", "p_model", "ev_c", "pnl_taker_c",
-               "pnl_maker_c", "phase_label", "note"]
+               "fill_vwap_c", "filled_qty", "qty", "fee_c", "p_model",
+               "ev_c", "pnl_taker_c", "pnl_maker_c", "clv_c",
+               "phase_label", "note"]
+
+
+def last_seen_quote(ticker):
+    """The last snapshot mid for a ticker, for closing-line grading."""
+    try:
+        files = sorted(os.listdir(SNAPDIR), reverse=True)[:3]
+    except OSError:
+        return None
+    for fn in files:
+        best = None
+        with open(os.path.join(SNAPDIR, fn)) as f:
+            for line in f:
+                try:
+                    row = json.loads(line)
+                except ValueError:
+                    continue
+                for board in (row.get("boards") or {}).values():
+                    for b in board:
+                        if b.get("ticker") == ticker:
+                            bid, ask = b.get("bid"), b.get("ask")
+                            if bid is not None and ask is not None:
+                                best = (bid + ask) / 2
+                            elif ask is not None:
+                                best = ask
+        if best is not None:
+            return round(best, 1)
+    return None
 
 
 def utcnow():
@@ -175,6 +203,15 @@ def main():
                     "ticker": m["ticker"],
                     "lo": m.get("floor_strike"), "hi": m.get("cap_strike"),
                     "bid": qcents(m, "yes_bid"), "ask": qcents(m, "yes_ask")})
+        # stamp the model's probability on every band it can price, so
+        # snapshots carry everything a Brier score needs at G1
+        for target, lead, f_raw in ((today, "d0", f_today), (tomorrow, "d1", f_tomorrow)):
+            if f_raw is None or not boards.get(target):
+                continue
+            f_corr = f_raw + engine.bias(bias_errors(key, lead))
+            table = tables[key][lead][engine.season(target)]
+            for b in boards[target]:
+                b["p"] = round(engine.band_prob(table, f_corr, b.get("lo"), b.get("hi")) * 100, 1)
         snap_f.write(json.dumps({
             "ts": now.isoformat(timespec="seconds"), "city": key,
             "f_today": f_today, "f_tomorrow": f_tomorrow,
@@ -201,19 +238,34 @@ def main():
             pick = engine.pick_entry(engine.price_board(table, f_corr, board))
             if pick is None:
                 continue
-            fee = engine.taker_fee_cents(pick["ask"])
+            # fill against the real book, partial fills stay partial
+            try:
+                ob = wx.orderbook(pick["ticker"])
+                vwap, filled = engine.fill_walk(
+                    ob["asks"], engine.QTY,
+                    limit_price=pick["ask"] + engine.SLIPPAGE_CAP)
+                fill_note = lead
+            except RuntimeError:
+                vwap, filled = float(pick["ask"]), engine.QTY
+                fill_note = lead + " book_unavailable_top_fill"
+            if filled == 0:
+                continue
+            fill_c = round(vwap)
+            fee = engine.taker_fee_cents(fill_c)
             positions.append({"city": key, "event_date": target,
                               "ticker": pick["ticker"], "ask": pick["ask"],
-                              "qty": engine.QTY, "p_model": pick["p_model"],
+                              "vwap": fill_c, "qty": filled,
+                              "p_model": pick["p_model"],
                               "lead": lead, "status": "open",
                               "ts_open": now.isoformat(timespec="seconds")})
             append_ledger({"ts": now.isoformat(timespec="seconds"), "city": key,
                            "event_date": target, "ticker": pick["ticker"],
                            "action": "OPEN", "price_c": pick["ask"],
+                           "fill_vwap_c": vwap, "filled_qty": filled,
                            "qty": engine.QTY, "fee_c": fee,
                            "p_model": pick["p_model"], "ev_c": pick["ev"],
-                           "pnl_taker_c": "", "pnl_maker_c": "",
-                           "phase_label": label, "note": lead})
+                           "pnl_taker_c": "", "pnl_maker_c": "", "clv_c": "",
+                           "phase_label": label, "note": fill_note})
             opened += 1
 
         # exits on open positions in this city
@@ -235,16 +287,30 @@ def main():
                                      m.get("cap_strike")) * 100
             go, why = engine.should_exit(bid, p_now, local.hour)
             if go:
-                taker, maker = engine.sell_pnl(p["ask"], bid)
+                try:
+                    ob = wx.orderbook(p["ticker"])
+                    svwap, sfilled = engine.fill_walk(
+                        ob["bids"], p["qty"],
+                        limit_price=None)
+                except RuntimeError:
+                    svwap, sfilled = float(bid), p["qty"]
+                if sfilled == 0:
+                    continue
+                sell_c = round(svwap)
+                entry_c = p.get("vwap", p["ask"])
+                taker, maker = engine.sell_pnl(entry_c, sell_c)
                 p["status"] = "sold"
-                p["sell_bid"] = bid
+                p["sell_bid"] = sell_c
+                p["sold_qty"] = sfilled
                 append_ledger({"ts": now.isoformat(timespec="seconds"), "city": key,
                                "event_date": p["event_date"], "ticker": p["ticker"],
-                               "action": "SELL", "price_c": bid, "qty": p["qty"],
-                               "fee_c": engine.taker_fee_cents(bid),
+                               "action": "SELL", "price_c": bid,
+                               "fill_vwap_c": svwap, "filled_qty": sfilled,
+                               "qty": p["qty"],
+                               "fee_c": engine.taker_fee_cents(sell_c),
                                "p_model": round(p_now, 1), "ev_c": "",
-                               "pnl_taker_c": taker * p["qty"],
-                               "pnl_maker_c": maker * p["qty"],
+                               "pnl_taker_c": taker * sfilled,
+                               "pnl_maker_c": maker * sfilled, "clv_c": "",
                                "phase_label": label, "note": why})
                 closed += 1
 
@@ -266,7 +332,10 @@ def main():
         if row is None or row.get("result") not in ("yes", "no"):
             continue
         won = row["result"] == "yes"
-        taker, maker = engine.entry_pnl(p["ask"], won)
+        entry_c = p.get("vwap", p["ask"])
+        taker, maker = engine.entry_pnl(entry_c, won)
+        close_mid = last_seen_quote(p["ticker"])
+        clv = round(close_mid - entry_c, 1) if close_mid is not None else ""
         if p["status"] == "sold":
             note = "hold_would_be %d" % (taker * p["qty"])
             pnl_t = pnl_m = ""
@@ -276,9 +345,10 @@ def main():
         append_ledger({"ts": now.isoformat(timespec="seconds"), "city": key,
                        "event_date": p["event_date"], "ticker": p["ticker"],
                        "action": "SETTLE", "price_c": 100 if won else 0,
+                       "fill_vwap_c": entry_c, "filled_qty": p["qty"],
                        "qty": p["qty"], "fee_c": 0, "p_model": p["p_model"],
                        "ev_c": "", "pnl_taker_c": pnl_t, "pnl_maker_c": pnl_m,
-                       "phase_label": label, "note": note})
+                       "clv_c": clv, "phase_label": label, "note": note})
         settled += 1
         done.append(p)
     for p in done:

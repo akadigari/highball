@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "city": "nyc",
+  "event_date": "2026-07-23",
+  "ticker": "KXHIGHNY-26JUL23-T79",
+  "ask": 15,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 65.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-23T00:40:27+00:00"
+ },
+ {
+  "city": "mia",
+  "event_date": "2026-07-23",
+  "ticker": "KXHIGHMIA-26JUL23-B94.5",
+  "ask": 14,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 38.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-23T00:40:27+00:00"
+ },
+ {
+  "city": "bos",
+  "event_date": "2026-07-23",
+  "ticker": "KXHIGHTBOS-26JUL23-B82.5",
+  "ask": 11,
+  "vwap": 13,
+  "qty": 100,
+  "p_model": 24.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-23T00:40:27+00:00"
+ },
+ {
+  "city": "atl",
+  "event_date": "2026-07-23",
+  "ticker": "KXHIGHTATL-26JUL23-B92.5",
+  "ask": 12,
+  "vwap": 12,
+  "qty": 100,
+  "p_model": 23.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-23T00:40:27+00:00"
+ }
+]

@@ -221,3 +221,35 @@ def cents(dollar_string):
     if dollar_string is None:
         return None
     return round(float(dollar_string) * 100)
+
+
+def orderbook(ticker):
+    """Live order book as yes-side levels, always fetched fresh.
+
+    Kalshi returns resting YES bids and NO bids. The price to BUY yes
+    as a taker is 100 minus a NO bid. Handles both the old int-cents
+    shape and the newer dollar-strings shape (orderbook_fp).
+    Returns {"asks": [(price_cents, size), ...cheapest first],
+             "bids": [(price_cents, size), ...highest first]}.
+    """
+    d = fetch(BASE + "/markets/" + ticker + "/orderbook", fresh=True)
+    ob = d.get("orderbook_fp") or d.get("orderbook") or {}
+
+    def levels(side_new, side_old):
+        rows = ob.get(side_new) or ob.get(side_old) or []
+        out = []
+        for r in rows:
+            try:
+                price = cents(r[0]) if isinstance(r[0], str) else int(r[0])
+                size = int(float(r[1]))
+            except (ValueError, TypeError, IndexError):
+                continue
+            if price is not None and size > 0:
+                out.append((price, size))
+        return out
+
+    yes_bids = levels("yes_dollars", "yes")
+    no_bids = levels("no_dollars", "no")
+    asks = sorted([(100 - p, s) for p, s in no_bids if 0 < 100 - p < 100])
+    bids = sorted([(p, s) for p, s in yes_bids if 0 < p < 100], reverse=True)
+    return {"asks": asks, "bids": bids}
