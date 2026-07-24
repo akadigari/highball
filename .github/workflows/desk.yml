@@ -1,12 +1,19 @@
 name: desk
-# Four runs a day, all UTC. 00:15 catches the evening entry window for
-# eastern and central cities, 03:15 for mountain and pacific, 13:00
-# settles yesterday and covers eastern mornings, 17:30 checks exits.
+# Seven runs a day, all UTC. GitHub crons run late sometimes, and a
+# late run can miss a whole entry window (it happened on day two), so
+# every window gets a backup tick about 90 minutes later. The
+# one-position-per-city-per-day guard makes double entries impossible.
+# 00:15 + 01:45 cover the eastern and central evening windows, 03:15 +
+# 04:45 cover mountain and pacific evenings, 13:00 + 13:45 settle,
+# train, and cover eastern and central mornings, 17:30 is exit patrol.
 on:
   schedule:
     - cron: "15 0 * * *"
+    - cron: "45 1 * * *"
     - cron: "15 3 * * *"
+    - cron: "45 4 * * *"
     - cron: "0 13 * * *"
+    - cron: "45 13 * * *"
     - cron: "30 17 * * *"
   workflow_dispatch:
 
