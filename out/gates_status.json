@@ -32,7 +32,7 @@
   ],
   "extended_d1c_over_47": []
  },
- "snapshot_days": 2,
+ "snapshot_days": 3,
  "replay": {
   "what": "held-out accuracy proof: beliefs frozen 2026-06-15, replayed to 2026-07-20 on real candle asks",
   "entries": 50,

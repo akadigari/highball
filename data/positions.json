@@ -56,8 +56,10 @@
   "qty": 100,
   "p_model": 61.3,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-23T15:01:58+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-23T15:01:58+00:00",
+  "sell_bid": 96,
+  "sold_qty": 100
  },
  {
   "city": "lax",
@@ -80,8 +82,10 @@
   "qty": 100,
   "p_model": 73.1,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-23T15:01:58+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-23T15:01:58+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
  },
  {
   "city": "sea",
@@ -92,7 +96,45 @@
   "qty": 100,
   "p_model": 66.8,
   "lead": "d0",
+  "status": "sold",
+  "ts_open": "2026-07-23T15:01:58+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
+ },
+ {
+  "city": "den",
+  "event_date": "2026-07-24",
+  "ticker": "KXHIGHDEN-26JUL24-T96",
+  "ask": 32,
+  "vwap": 33,
+  "qty": 100,
+  "p_model": 48.8,
+  "lead": "d1",
   "status": "open",
-  "ts_open": "2026-07-23T15:01:58+00:00"
+  "ts_open": "2026-07-24T03:46:26+00:00"
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-07-24",
+  "ticker": "KXHIGHLAX-26JUL24-B84.5",
+  "ask": 15,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 35.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-24T03:46:26+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-07-24",
+  "ticker": "KXHIGHTLV-26JUL24-B109.5",
+  "ask": 39,
+  "vwap": 39,
+  "qty": 100,
+  "p_model": 50.9,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-24T03:46:26+00:00"
  }
 ]
