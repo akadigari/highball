@@ -332,6 +332,23 @@ and tested:
   cron sees the book a few times a day, not continuously. Both are
   conservative directions.
 
+## Addendum 9, 2026-07-24: the afternoon sure-thing, metered not bet
+
+Owner idea: when the day's high is basically locked, buy the
+near-certain band at whatever it costs. Prior art killed this trade
+twice (post-peak: nothing left at a discount; speed: the price snaps
+before a cron could ever see it), so it does NOT trade. Instead it
+gets a meter at G1: replay "buy every band at 90c or better at the
+17:30 UTC snapshot, taker fees included" against our own archived
+boards. If our tape contradicts the graveyard, it can earn a
+pre-registered arm then. Bets need evidence; graveyards need
+re-checking; meters are how both stay honest.
+
+Same addendum, window hardening: cron ticks doubled up per entry
+window (7 runs a day) after a late GitHub run skipped the eastern
+morning window on day two. The one-position-per-city-per-day guard
+already made double entries impossible, so backup ticks are free.
+
 ## Rollout
 
 1. Commit this spec.
