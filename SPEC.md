@@ -349,6 +349,48 @@ window (7 runs a day) after a late GitHub run skipped the eastern
 morning window on day two. The one-position-per-city-per-day guard
 already made double entries impossible, so backup ticks are free.
 
+## Addendum 10, 2026-07-24: the G1 courtroom, built before the trial
+
+lab/run_g1.py is committed now, while the 14-day window is mostly
+empty, so the analysis cannot be shaped around the results. The
+official run happens on the first morning with 14 or more snapshot
+days (early August). Until then the script runs in preview mode and
+writes no decisions. Every decision rule is frozen here:
+
+- D1, the counted clock: starts only if at least 3 cities each have
+  5 or more settled entries with positive net taker P&L.
+- D2, the overconfidence fix: try shrink weights w in {1.0, 0.8,
+  0.7, 0.6, 0.5} where the used probability becomes
+  w x model + (1 - w) x market mid, scored by Brier over every
+  evening-window snapshot band with a settled outcome. Adopt the
+  best w only if it beats w = 1.0 by at least 2 percent relative.
+- D3, the honesty override: if the adopted model still scores a
+  worse Brier than the market mid on the same bands, the counted
+  clock does NOT start, whatever D1 says. A model that loses on
+  accuracy but wins on divergences is presumed to be an artifact.
+- D4, the exit exemption: among sells at 95c or better (minimum 5),
+  if holding would have beaten selling, adopt ride-to-settle for
+  bids at 95c or better.
+- D5, the floor: if entries filled under 15c are net negative with
+  10 or more settled, the longshot floor rises from 10c to 15c.
+- D6, mornings: if same-day (d0) entries are net negative with 8 or
+  more settled, the morning window closes and the desk goes
+  evening-only.
+- D7, the bench: any city with 6 or more settled entries, negative
+  net P&L, AND negative average closing-line value gets benched
+  until G2, rallycap style.
+- D8, the afternoon meter (addendum 9): replay buying every band at
+  90c to 99c at afternoon snapshots, taker fees included. Report
+  always. It can only be armed as its own registered arm if net
+  positive with 50 or more samples, and arming is an owner call.
+- D9, the maker route: report the taker-vs-maker fee delta and
+  observed spread widths. No rule change at G1; this feeds the
+  mm_bot pairing decision.
+- Minimum-n rules are hard: below minimum, the status quo holds.
+- Every decision lands in out/gates_status.json under g1.decisions,
+  and any adopted engine change is implemented the same day citing
+  this addendum.
+
 ## Rollout
 
 1. Commit this spec.
