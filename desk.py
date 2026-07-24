@@ -103,6 +103,27 @@ def live_forecasts(cfg, today, tomorrow):
             climate_day_max(hourly, tomorrow, cfg["tz"]))
 
 
+def nws_highs(key, today, tomorrow):
+    """The official human forecast, archived as the crowd's anchor.
+
+    Collected only. The engine does not read it; a gate has to admit
+    it first, per SPEC addendum 11.
+    """
+    url = wx.NWS_FORECAST.get(key)
+    if not url:
+        return None, None
+    try:
+        d = wx.fetch(url, fresh=True,
+                     ua="highball-desk (github.com/akadigari/highball)")
+    except RuntimeError:
+        return None, None
+    highs = {}
+    for p in (d.get("properties") or {}).get("periods", []):
+        if p.get("isDaytime") and p.get("temperature") is not None:
+            highs.setdefault(p.get("startTime", "")[:10], p["temperature"])
+    return highs.get(today), highs.get(tomorrow)
+
+
 def load_positions():
     if os.path.exists(POSITIONS):
         return json.load(open(POSITIONS))
@@ -212,9 +233,11 @@ def main():
             table = tables[key][lead][engine.season(target)]
             for b in boards[target]:
                 b["p"] = round(engine.band_prob(table, f_corr, b.get("lo"), b.get("hi")) * 100, 1)
+        nws_t, nws_tm = nws_highs(key, today, tomorrow)
         snap_f.write(json.dumps({
             "ts": now.isoformat(timespec="seconds"), "city": key,
             "f_today": f_today, "f_tomorrow": f_tomorrow,
+            "nws_today": nws_t, "nws_tomorrow": nws_tm,
             "boards": boards}) + "\n")
         if f_today is not None:
             log_forecast(key, today, "d0", f_today)

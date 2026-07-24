@@ -391,6 +391,34 @@ writes no decisions. Every decision rule is frozen here:
   and any adopted engine change is implemented the same day citing
   this addendum.
 
+## Addendum 11, 2026-07-24: other people's data, the doctrine
+
+Owner question: should we pull in data about what other people are
+doing? Answer, with rules:
+
+- New data streams get COLLECTED first and USED never, until a gate
+  admits them. Collection is reversible and free; letting a new
+  input into the engine mid-window is how backtests rot.
+- Crowd number one is already inside: every snapshot IS the
+  aggregated behavior of every other trader, and the G1 shrink
+  decision is exactly "how much to trust them."
+- Crowd number two starts now: the official NWS forecast per
+  station, archived in every snapshot next to the model's own
+  number. It is the anchor most of the market trades on, so the
+  archive can later measure crowd-vs-anchor drift. The engine does
+  not read it yet.
+- Polymarket US weather boards would be crowd three (same CLI
+  settlement, five overlapping stations), but their API requires a
+  key, and this desk's hard limit is keyless public data. Parked as
+  an owner decision after the queued cross-venue research runs.
+  The legacy polymarket.com boards are rejected outright: they
+  settle on different stations (LaGuardia, Love Field), and almost
+  matching data is worse than no data.
+- Wallet-following the known weather whales is parked: their
+  information mostly arrives in prices we already archive, and the
+  prior art says their edge is scale and latency, not forecasts
+  worth copying.
+
 ## Rollout
 
 1. Commit this spec.

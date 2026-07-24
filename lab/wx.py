@@ -38,7 +38,31 @@ CITIES = {
 }
 
 
-def fetch(url, post_json=None, tries=3, fresh=False):
+# NWS gridpoint forecast URLs per station, resolved once on 2026-07-24.
+# These are stable; the desk archives the official human forecast from
+# them next to the model's numbers. api.weather.gov requires a
+# User-Agent header.
+NWS_FORECAST = {
+    "nyc": "https://api.weather.gov/gridpoints/OKX/34,45/forecast",
+    "den": "https://api.weather.gov/gridpoints/BOU/75,66/forecast",
+    "chi": "https://api.weather.gov/gridpoints/LOT/72,69/forecast",
+    "aus": "https://api.weather.gov/gridpoints/EWX/158,87/forecast",
+    "mia": "https://api.weather.gov/gridpoints/MFL/105,51/forecast",
+    "lax": "https://api.weather.gov/gridpoints/LOX/149,41/forecast",
+    "phl": "https://api.weather.gov/gridpoints/PHI/48,75/forecast",
+    "dc": "https://api.weather.gov/gridpoints/LWX/97,69/forecast",
+    "lv": "https://api.weather.gov/gridpoints/VEF/121,94/forecast",
+    "dal": "https://api.weather.gov/gridpoints/FWD/81,109/forecast",
+    "bos": "https://api.weather.gov/gridpoints/BOX/73,101/forecast",
+    "sea": "https://api.weather.gov/gridpoints/SEW/124,60/forecast",
+    "atl": "https://api.weather.gov/gridpoints/FFC/49,81/forecast",
+    "sat": "https://api.weather.gov/gridpoints/EWX/127,60/forecast",
+    "nola": "https://api.weather.gov/gridpoints/LIX/61,90/forecast",
+    "okc": "https://api.weather.gov/gridpoints/OUN/94,90/forecast",
+}
+
+
+def fetch(url, post_json=None, tries=3, fresh=False, ua=None):
     """GET (or POST json) a url with curl, cache the parsed result.
 
     fresh=True skips the cache both ways: the live desk must see the
@@ -51,6 +75,8 @@ def fetch(url, post_json=None, tries=3, fresh=False):
         with open(path) as f:
             return json.load(f)
     cmd = ["curl", "-s", "--max-time", "90", url]
+    if ua:
+        cmd += ["-A", ua]
     if post_json is not None:
         cmd += ["-X", "POST", "-H", "Content-Type: application/json", "-d", json.dumps(post_json)]
     for i in range(tries):
