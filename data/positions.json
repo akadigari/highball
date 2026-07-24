@@ -46,8 +46,10 @@
   "qty": 100,
   "p_model": 60.5,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-24T14:44:22+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-24T14:44:22+00:00",
+  "sell_bid": 59,
+  "sold_qty": 100
  },
  {
   "city": "aus",
@@ -58,8 +60,10 @@
   "qty": 100,
   "p_model": 71.6,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-24T14:44:22+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-24T14:44:22+00:00",
+  "sell_bid": 68,
+  "sold_qty": 100
  },
  {
   "city": "dal",
@@ -70,8 +74,10 @@
   "qty": 100,
   "p_model": 54.7,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-24T14:44:22+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-24T14:44:22+00:00",
+  "sell_bid": 60,
+  "sold_qty": 100
  },
  {
   "city": "okc",
