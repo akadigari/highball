@@ -90,5 +90,29 @@
   "lead": "d0",
   "status": "open",
   "ts_open": "2026-07-24T14:44:22+00:00"
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-07-25",
+  "ticker": "KXHIGHLAX-26JUL25-B81.5",
+  "ask": 25,
+  "vwap": 25,
+  "qty": 100,
+  "p_model": 35.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-25T03:41:06+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-07-25",
+  "ticker": "KXHIGHTLV-26JUL25-B111.5",
+  "ask": 10,
+  "vwap": 12,
+  "qty": 100,
+  "p_model": 25.5,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-25T03:41:06+00:00"
  }
 ]
