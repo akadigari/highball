@@ -48,5 +48,29 @@
   "lead": "d0",
   "status": "open",
   "ts_open": "2026-07-28T15:11:54+00:00"
+ },
+ {
+  "city": "den",
+  "event_date": "2026-07-29",
+  "ticker": "KXHIGHDEN-26JUL29-T93",
+  "ask": 19,
+  "vwap": 22,
+  "qty": 100,
+  "p_model": 48.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-29T03:43:25+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-07-29",
+  "ticker": "KXHIGHTLV-26JUL29-B107.5",
+  "ask": 15,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 50.9,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-29T03:43:25+00:00"
  }
 ]
