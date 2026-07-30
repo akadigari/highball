@@ -1,19 +1,5 @@
 [
  {
-  "city": "sea",
-  "event_date": "2026-07-28",
-  "ticker": "KXHIGHTSEA-26JUL28-T72",
-  "ask": 11,
-  "vwap": 11,
-  "qty": 100,
-  "p_model": 30.0,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-07-28T03:39:26+00:00",
-  "sell_bid": 9,
-  "sold_qty": 100
- },
- {
   "city": "lv",
   "event_date": "2026-07-30",
   "ticker": "KXHIGHTLV-26JUL30-B112.5",
