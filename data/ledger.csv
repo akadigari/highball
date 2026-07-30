@@ -99,3 +99,4 @@ ts,city,event_date,ticker,action,price_c,fill_vwap_c,filled_qty,qty,fee_c,p_mode
 2026-07-30T15:02:05+00:00,lv,2026-07-29,KXHIGHTLV-26JUL29-B107.5,SETTLE,0,15,100,100,0,50.9,,,,-14.5,training,hold_would_be -1600
 2026-07-30T15:02:05+00:00,sea,2026-07-29,KXHIGHTSEA-26JUL29-B76.5,SETTLE,0,51,100,100,0,63.8,,-5300,-5100,-50.5,training,held
 2026-07-30T15:35:21+00:00,sea,2026-07-28,KXHIGHTSEA-26JUL28-T72,SETTLE,0,11,100,100,0,30.0,,,,-10.5,training,hold_would_be -1200
+2026-07-30T18:53:32+00:00,den,2026-07-30,KXHIGHDEN-26JUL30-B93.5,SELL,48,44.24,100,100,2,33.5,,-500,-100,,training,edge_gone

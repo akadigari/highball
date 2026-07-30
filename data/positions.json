@@ -32,8 +32,10 @@
   "qty": 100,
   "p_model": 61.3,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-07-30T15:02:05+00:00"
+  "status": "sold",
+  "ts_open": "2026-07-30T15:02:05+00:00",
+  "sell_bid": 44,
+  "sold_qty": 100
  },
  {
   "city": "sea",
