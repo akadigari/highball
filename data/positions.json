@@ -50,5 +50,17 @@
   "lead": "d0",
   "status": "open",
   "ts_open": "2026-07-29T15:04:39+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-07-30",
+  "ticker": "KXHIGHTLV-26JUL30-B112.5",
+  "ask": 21,
+  "vwap": 21,
+  "qty": 100,
+  "p_model": 31.5,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-30T03:32:03+00:00"
  }
 ]
