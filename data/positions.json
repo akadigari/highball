@@ -48,5 +48,41 @@
   "lead": "d0",
   "status": "open",
   "ts_open": "2026-07-30T15:02:05+00:00"
+ },
+ {
+  "city": "den",
+  "event_date": "2026-07-31",
+  "ticker": "KXHIGHDEN-26JUL31-T92",
+  "ask": 17,
+  "vwap": 19,
+  "qty": 100,
+  "p_model": 30.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-31T03:52:45+00:00"
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-07-31",
+  "ticker": "KXHIGHLAX-26JUL31-T80",
+  "ask": 51,
+  "vwap": 51,
+  "qty": 100,
+  "p_model": 97.6,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-31T03:52:45+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-07-31",
+  "ticker": "KXHIGHTLV-26JUL31-B110.5",
+  "ask": 13,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 25.5,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-07-31T03:52:45+00:00"
  }
 ]
