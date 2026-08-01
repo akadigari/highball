@@ -58,8 +58,10 @@
   "qty": 100,
   "p_model": 26.7,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-01T03:52:52+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-01T03:52:52+00:00",
+  "sell_bid": 11,
+  "sold_qty": 100
  },
  {
   "city": "lv",
