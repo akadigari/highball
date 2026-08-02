@@ -112,7 +112,21 @@
   "qty": 100,
   "p_model": 62.8,
   "lead": "d0",
+  "status": "sold",
+  "ts_open": "2026-08-01T14:22:15+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
+ },
+ {
+  "city": "den",
+  "event_date": "2026-08-02",
+  "ticker": "KXHIGHDEN-26AUG02-T103",
+  "ask": 10,
+  "vwap": 10,
+  "qty": 100,
+  "p_model": 17.5,
+  "lead": "d1",
   "status": "open",
-  "ts_open": "2026-08-01T14:22:15+00:00"
+  "ts_open": "2026-08-02T03:55:34+00:00"
  }
 ]
