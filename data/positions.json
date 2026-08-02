@@ -70,7 +70,9 @@
   "qty": 100,
   "p_model": 62.8,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-08-02T14:23:09+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-02T14:23:09+00:00",
+  "sell_bid": 39,
+  "sold_qty": 100
  }
 ]
