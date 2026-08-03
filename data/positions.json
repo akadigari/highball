@@ -22,8 +22,10 @@
   "qty": 100,
   "p_model": 35.8,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-02T04:59:20+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-02T04:59:20+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
  },
  {
   "city": "aus",
@@ -46,8 +48,10 @@
   "qty": 100,
   "p_model": 65.3,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-08-02T14:23:09+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-02T14:23:09+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
  },
  {
   "city": "nola",
@@ -74,5 +78,29 @@
   "ts_open": "2026-08-02T14:23:09+00:00",
   "sell_bid": 39,
   "sold_qty": 100
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-08-03",
+  "ticker": "KXHIGHLAX-26AUG03-B76.5",
+  "ask": 24,
+  "vwap": 24,
+  "qty": 100,
+  "p_model": 35.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-03T03:56:55+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-08-03",
+  "ticker": "KXHIGHTLV-26AUG03-B114.5",
+  "ask": 35,
+  "vwap": 35,
+  "qty": 100,
+  "p_model": 52.5,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-03T03:56:55+00:00"
  }
 ]
