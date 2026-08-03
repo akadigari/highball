@@ -1,87 +1,5 @@
 [
  {
-  "city": "den",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHDEN-26AUG02-T103",
-  "ask": 10,
-  "vwap": 10,
-  "qty": 100,
-  "p_model": 17.5,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-02T03:55:34+00:00",
-  "sell_bid": 9,
-  "sold_qty": 100
- },
- {
-  "city": "lax",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHLAX-26AUG02-B78.5",
-  "ask": 26,
-  "vwap": 26,
-  "qty": 100,
-  "p_model": 35.8,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-02T04:59:20+00:00",
-  "sell_bid": 99,
-  "sold_qty": 100
- },
- {
-  "city": "aus",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHAUS-26AUG02-B101.5",
-  "ask": 22,
-  "vwap": 24,
-  "qty": 100,
-  "p_model": 32.0,
-  "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-08-02T14:23:09+00:00"
- },
- {
-  "city": "dal",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHTDAL-26AUG02-B95.5",
-  "ask": 42,
-  "vwap": 42,
-  "qty": 100,
-  "p_model": 65.3,
-  "lead": "d0",
-  "status": "sold",
-  "ts_open": "2026-08-02T14:23:09+00:00",
-  "sell_bid": 99,
-  "sold_qty": 100
- },
- {
-  "city": "nola",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHTNOLA-26AUG02-T91",
-  "ask": 67,
-  "vwap": 68,
-  "qty": 100,
-  "p_model": 98.0,
-  "lead": "d0",
-  "status": "sold",
-  "ts_open": "2026-08-02T14:23:09+00:00",
-  "sell_bid": 99,
-  "sold_qty": 100
- },
- {
-  "city": "okc",
-  "event_date": "2026-08-02",
-  "ticker": "KXHIGHTOKC-26AUG02-B95.5",
-  "ask": 42,
-  "vwap": 44,
-  "qty": 100,
-  "p_model": 62.8,
-  "lead": "d0",
-  "status": "sold",
-  "ts_open": "2026-08-02T14:23:09+00:00",
-  "sell_bid": 39,
-  "sold_qty": 100
- },
- {
   "city": "lax",
   "event_date": "2026-08-03",
   "ticker": "KXHIGHLAX-26AUG03-B76.5",
@@ -90,8 +8,10 @@
   "qty": 100,
   "p_model": 35.8,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-03T03:56:55+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-03T03:56:55+00:00",
+  "sell_bid": 34,
+  "sold_qty": 100
  },
  {
   "city": "lv",
@@ -104,5 +24,29 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-03T03:56:55+00:00"
+ },
+ {
+  "city": "den",
+  "event_date": "2026-08-03",
+  "ticker": "KXHIGHDEN-26AUG03-B101.5",
+  "ask": 44,
+  "vwap": 44,
+  "qty": 100,
+  "p_model": 61.3,
+  "lead": "d0",
+  "status": "open",
+  "ts_open": "2026-08-03T15:37:01+00:00"
+ },
+ {
+  "city": "sea",
+  "event_date": "2026-08-03",
+  "ticker": "KXHIGHTSEA-26AUG03-B75.5",
+  "ask": 25,
+  "vwap": 26,
+  "qty": 100,
+  "p_model": 66.8,
+  "lead": "d0",
+  "status": "open",
+  "ts_open": "2026-08-03T15:37:01+00:00"
  }
 ]
