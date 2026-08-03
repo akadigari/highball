@@ -62,8 +62,10 @@
   "qty": 100,
   "p_model": 98.0,
   "lead": "d0",
-  "status": "open",
-  "ts_open": "2026-08-02T14:23:09+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-02T14:23:09+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
  },
  {
   "city": "okc",
