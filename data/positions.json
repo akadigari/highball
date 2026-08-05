@@ -62,5 +62,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-05T03:35:43+00:00"
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-08-05",
+  "ticker": "KXHIGHLAX-26AUG05-B75.5",
+  "ask": 25,
+  "vwap": 25,
+  "qty": 100,
+  "p_model": 35.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-05T04:47:52+00:00"
  }
 ]
