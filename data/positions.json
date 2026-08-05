@@ -36,8 +36,10 @@
   "qty": 100,
   "p_model": 57.3,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-04T03:40:44+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-04T03:40:44+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
  },
  {
   "city": "den",
@@ -62,8 +64,10 @@
   "qty": 100,
   "p_model": 50.9,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-05T03:35:43+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-05T03:35:43+00:00",
+  "sell_bid": 22,
+  "sold_qty": 100
  },
  {
   "city": "lax",
