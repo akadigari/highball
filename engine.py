@@ -11,12 +11,18 @@ import math
 MIN_EV_CENTS = 5      # entry needs at least this much edge after fees
 MIN_ASK = 10          # longshot filter, registered: never buy under 10c
 MAX_ASK = 90          # nothing left to win above this
-EXIT_MARGIN = 5       # sell when bid >= model probability + margin
+EXIT_MARGIN = 5       # sell when bid >= used probability + margin
 HARVEST_BID = 90      # or when bid >= this with the day still young
 HARVEST_BEFORE_HOUR = 12
 TRAIL = 30
 MIN_BIAS_N = 10
 QTY = 100             # flat sim size, contracts per position
+
+# Adopted at the official G1 run, 2026-08-05 (SPEC.md addendum 10;
+# the numbers live in out/gates_status.json under g1.decisions).
+SHRINK_W = 0.5        # d2: Brier 0.06696 at w=0.5 vs 0.08881 at w=1.0
+RIDE_BID = 95         # d4: holding beat selling 72500c to 69600c, n=13
+BENCHED = {"den", "lax", "lv"}  # d7: benched until G2, rallycap style
 
 
 def taker_fee_cents(price_cents):
@@ -81,10 +87,23 @@ def price_board(table, f_corrected, bands):
     return out
 
 
+def used_prob(p_model, bid, ask):
+    """The probability the desk acts on: G1 d2 shrink toward the mid.
+
+    Cents scale in and out. Without a two-sided quote there is no mid
+    to shrink toward, so the raw model number stands.
+    """
+    if bid is None or ask is None:
+        return p_model
+    mid = (bid + ask) / 2.0
+    return SHRINK_W * p_model + (1 - SHRINK_W) * mid
+
+
 def pick_entry(priced_board):
     """Best positive-EV band on the board, or None.
 
-    EV per contract = model probability - ask - taker fee. The
+    EV per contract = used probability - ask - taker fee, where the
+    used probability is the G1 d2 blend of model and market mid. The
     longshot filter and the top cap are registered rules.
     """
     best = None
@@ -92,22 +111,44 @@ def pick_entry(priced_board):
         ask = b.get("ask")
         if ask is None or not (MIN_ASK <= ask <= MAX_ASK):
             continue
-        ev = b["p_model"] - ask - taker_fee_cents(ask)
+        ev = used_prob(b["p_model"], b.get("bid"), ask) - ask - taker_fee_cents(ask)
         if ev >= MIN_EV_CENTS and (best is None or ev > best["ev"]):
             best = dict(b)
             best["ev"] = round(ev, 1)
     return best
 
 
-def should_exit(bid, p_model, local_hour):
-    """The registered exit rule. Returns (True, reason) or (False, "")."""
+def should_exit(bid, p_used, local_hour):
+    """The registered exit rule. Returns (True, reason) or (False, "").
+
+    p_used is the G1 d2 blended probability. Bids at RIDE_BID or
+    better ride to settlement (G1 d4), no sale of any kind.
+    """
     if bid is None:
         return False, ""
-    if bid >= p_model + EXIT_MARGIN:
+    if bid >= RIDE_BID:
+        return False, ""
+    if bid >= p_used + EXIT_MARGIN:
         return True, "edge_gone"
     if bid >= HARVEST_BID and local_hour < HARVEST_BEFORE_HOUR:
         return True, "harvest"
     return False, ""
+
+
+def entry_leads(local_hour):
+    """Which entry windows are open at this local hour.
+
+    G1 d6 closed the morning window (36 d0 entries, net -6606c), so
+    the desk is evening-only: d1 entries at 19:00 to 21:59 local.
+    """
+    if 19 <= local_hour < 22:
+        return ["d1"]
+    return []
+
+
+def is_benched(city):
+    """G1 d7: no new entries in benched cities until G2."""
+    return city in BENCHED
 
 
 def entry_pnl(ask, won):

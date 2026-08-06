@@ -1,0 +1,47 @@
+{
+ "what": "effective n of the settled taker P&L series, Bartlett ladder",
+ "reference": "assay/ess.py, the fleet effective-n rule",
+ "written": "2026-08-06T02:21:13+00:00",
+ "n": 72,
+ "ess_min": 39.34,
+ "ess_max": 51.79,
+ "ratio_min": 0.546,
+ "ratio_max": 0.719,
+ "sweep": [
+  {
+   "bandwidth": 1,
+   "vif": 1.390187,
+   "ess": 51.79
+  },
+  {
+   "bandwidth": 2,
+   "vif": 1.52701,
+   "ess": 47.15
+  },
+  {
+   "bandwidth": 3,
+   "vif": 1.549334,
+   "ess": 46.47
+  },
+  {
+   "bandwidth": 5,
+   "vif": 1.61982,
+   "ess": 44.45
+  },
+  {
+   "bandwidth": 8,
+   "vif": 1.737456,
+   "ess": 41.44
+  },
+  {
+   "bandwidth": 13,
+   "vif": 1.800929,
+   "ess": 39.98
+  },
+  {
+   "bandwidth": 21,
+   "vif": 1.830256,
+   "ess": 39.34
+  }
+ ]
+}

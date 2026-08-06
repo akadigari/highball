@@ -244,12 +244,18 @@ def main():
         if f_tomorrow is not None:
             log_forecast(key, tomorrow, "d1", f_tomorrow)
 
-        # entries: evening window trades tomorrow, morning window today
+        # entries: engine.entry_leads owns the windows. G1 d6 closed
+        # mornings, so only the evening d1 window opens now.
         windows = []
-        if 19 <= local.hour < 22 and f_tomorrow is not None:
+        leads_open = engine.entry_leads(local.hour)
+        if "d1" in leads_open and f_tomorrow is not None:
             windows.append((tomorrow, "d1", f_tomorrow))
-        if 8 <= local.hour < 10 and f_today is not None:
+        # dead while d6 holds; kept so reopening mornings is one
+        # engine.entry_leads change, not a desk rewrite
+        if "d0" in leads_open and f_today is not None:
             windows.append((today, "d0", f_today))
+        if engine.is_benched(key):   # G1 d7, exits still run below
+            windows = []
         for target, lead, f_raw in windows:
             if any(p["city"] == key and p["event_date"] == target for p in positions):
                 continue
@@ -308,7 +314,8 @@ def main():
             table = tables[key][lead_now][engine.season(p["event_date"])]
             p_now = engine.band_prob(table, f_corr, m.get("floor_strike"),
                                      m.get("cap_strike")) * 100
-            go, why = engine.should_exit(bid, p_now, local.hour)
+            p_used = engine.used_prob(p_now, bid, qcents(m, "yes_ask"))
+            go, why = engine.should_exit(bid, p_used, local.hour)
             if go:
                 try:
                     ob = wx.orderbook(p["ticker"])

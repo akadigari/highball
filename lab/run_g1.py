@@ -110,11 +110,18 @@ def entries_from_ledger(rows):
 
 
 def truth_for(cities_needed):
-    """city -> {date: set of winning tickers} from settled markets."""
+    """city -> {date: set of winning tickers} from settled markets.
+
+    fresh=True is load-bearing: the Jul 22 lab cache froze truth at
+    Jul 21 and starved the courtroom of scored bands. The tradeoff,
+    accepted: preview runs refetch all 16 cities live, so they are
+    slower and not frozen-reproducible. Truth accrues by the hour;
+    only the committed artifacts of an official run are the record.
+    """
     truth = {}
     for key in cities_needed:
         cfg = wx.CITIES[key]
-        days = wx.by_day(wx.settled_markets(cfg["series"]))
+        days = wx.by_day(wx.settled_markets(cfg["series"], fresh=True))
         truth[key] = {d: {m["ticker"] for m in ms if m.get("result") == "yes"}
                       for d, ms in days.items()}
     return truth

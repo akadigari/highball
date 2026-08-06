@@ -48,5 +48,41 @@ class TestBuckets(unittest.TestCase):
         self.assertEqual(run_g1.bucket_of("2026-07-24T17:35:00+00:00"), "aft")
 
 
+class TestFreshTruth(unittest.TestCase):
+    """The courtroom judges today's settlements, not the lab cache.
+
+    Found 2026-08-05: fetch() cached every settled_markets call on
+    Jul 22, so truth ended at Jul 21 and zero snapshot bands scored.
+    """
+
+    def test_settled_markets_passes_fresh_through(self):
+        import wx
+        seen = {}
+        real_fetch = wx.fetch
+        try:
+            def spy(url, post_json=None, tries=3, fresh=False, ua=None):
+                seen["fresh"] = fresh
+                return {"events": [], "cursor": ""}
+            wx.fetch = spy
+            wx.settled_markets("KXHIGHDEN", fresh=True)
+        finally:
+            wx.fetch = real_fetch
+        self.assertTrue(seen["fresh"])
+
+    def test_truth_for_fetches_fresh(self):
+        import wx
+        seen = {}
+        real = wx.settled_markets
+        try:
+            def spy(series, fresh=False):
+                seen["fresh"] = fresh
+                return []
+            wx.settled_markets = spy
+            run_g1.truth_for(["den"])
+        finally:
+            wx.settled_markets = real
+        self.assertTrue(seen["fresh"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -70,11 +70,13 @@ class TestEntry(unittest.TestCase):
         self.assertIsNone(engine.pick_entry(board))
 
     def test_needs_margin_after_fees(self):
-        # p 40, ask 34, fee 2: ev 4 < 5, no trade
-        board = [{"ticker": "A", "p_model": 40.0, "ask": 34, "bid": 32}]
+        # G1 d2: entries are judged on the shrunk probability,
+        # 0.5 x model + 0.5 x mid. mid 33, fee 2, bar is ask+fee+5=41.
+        # p 48: used 40.5, ev 4.5 < 5, no trade
+        board = [{"ticker": "A", "p_model": 48.0, "ask": 34, "bid": 32}]
         self.assertIsNone(engine.pick_entry(board))
-        # p 41, ask 34, fee 2: ev 5, trade
-        board = [{"ticker": "A", "p_model": 41.0, "ask": 34, "bid": 32}]
+        # p 49: used 41.0, ev 5, trade
+        board = [{"ticker": "A", "p_model": 49.0, "ask": 34, "bid": 32}]
         self.assertEqual(engine.pick_entry(board)["ticker"], "A")
 
     def test_picks_best_ev(self):
@@ -96,6 +98,42 @@ class TestExit(unittest.TestCase):
     def test_harvest_only_early(self):
         self.assertTrue(engine.should_exit(92, 95.0, 9)[0])
         self.assertFalse(engine.should_exit(92, 95.0, 14)[0])
+
+
+class TestG1Adoptions(unittest.TestCase):
+    """Engine changes adopted at the official G1 run, 2026-08-05.
+    Rules frozen in SPEC.md addendum 10; numbers in gates_status.json g1."""
+
+    def test_used_prob_is_half_model_half_mid(self):
+        # d2: w=0.5 beat w=1.0 on Brier 0.06696 vs 0.08881
+        self.assertAlmostEqual(engine.used_prob(80.0, 40, 44), 61.0)
+
+    def test_used_prob_without_quotes_stays_model(self):
+        self.assertAlmostEqual(engine.used_prob(80.0, None, 44), 80.0)
+        self.assertAlmostEqual(engine.used_prob(80.0, 40, None), 80.0)
+
+    def test_entry_judged_on_shrunk_prob(self):
+        # raw p clears the old bar but the blend does not: no trade
+        board = [{"ticker": "A", "p_model": 44.0, "ask": 34, "bid": 32}]
+        self.assertIsNone(engine.pick_entry(board))
+
+    def test_ride_to_settle_at_95(self):
+        # d4: holding beat selling 72500c to 69600c across 13 high sells
+        self.assertFalse(engine.should_exit(95, 50.0, 9)[0])
+        self.assertFalse(engine.should_exit(97, 50.0, 15)[0])
+        self.assertTrue(engine.should_exit(94, 50.0, 15)[0])
+
+    def test_evening_only(self):
+        # d6: 36 morning entries net -6606c, morning window closed
+        self.assertEqual(engine.entry_leads(20), ["d1"])
+        self.assertEqual(engine.entry_leads(9), [])
+        self.assertEqual(engine.entry_leads(12), [])
+
+    def test_bench(self):
+        # d7: den, lax, lv all had >=6 settled, negative pnl, negative clv
+        for c in ("den", "lax", "lv"):
+            self.assertTrue(engine.is_benched(c))
+        self.assertFalse(engine.is_benched("sea"))
 
 
 class TestFillWalk(unittest.TestCase):

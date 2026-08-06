@@ -93,12 +93,13 @@ def fetch(url, post_json=None, tries=3, fresh=False, ua=None):
     raise RuntimeError("fetch failed after retries: " + url)
 
 
-def settled_markets(series):
+def settled_markets(series, fresh=False):
     """Every settled market in a series, walked through /events.
 
     The markets endpoint only retains about 67 days. Events page back
     to series birth (NYC reaches August 2021), legacy pre-rename
-    tickers included, with bands and results nested.
+    tickers included, with bands and results nested. fresh=True skips
+    the lab cache; anything judging current settlements needs it.
     """
     out, cursor, pages = [], "", 0
     while True:
@@ -106,7 +107,7 @@ def settled_markets(series):
                "&status=settled&limit=200&with_nested_markets=true")
         if cursor:
             url += "&cursor=" + cursor
-        d = fetch(url)
+        d = fetch(url, fresh=fresh)
         evs = d.get("events", [])
         for ev in evs:
             date = ticker_date(ev.get("event_ticker", ""))

@@ -426,3 +426,45 @@ doing? Answer, with rules:
    gates_status.json.
 3. File the verdict in the wiki and hand knaves its card facts.
 4. If G0 passed, build Phase S in a fresh session against this spec.
+
+
+## Addendum 12, 2026-08-05: the official G1 run
+
+The courtroom ran official on the first day with 14 or more snapshot
+days (15). Full report: lab/G1.md. Decisions recorded in
+out/gates_status.json under g1.
+
+- Verdict: G1 does NOT pass and the counted clock does not start.
+  D1 found only 2 qualifying cities (sea +14400c on 10 settles, okc
+  +3995c on 5; the rule needs 3). D3 fired: even the best shrink
+  leaves the model's Brier at 0.06646 against the market mid's
+  0.0588 over 3838 evening bands.
+- Adopted and implemented the same day per addendum 10: d2 shrink
+  w=0.5 (Brier 0.06646 vs 0.09009 at w=1.0, a 26.2 percent relative
+  gain), d4 ride-to-settle at bids 95c or better (holding beat
+  selling 72500c to 69600c across 13 high sells), d6 morning window
+  closed (36 d0 entries net -6606c, desk is evening-only), d7 den,
+  lax, and lv benched until G2 (each negative P&L and negative mean
+  CLV on 12 or more settles).
+- Not adopted: d5 floor stays at 10c (9 sub-15c settles, one short
+  of the minimum, status quo holds). d8 afternoon meter read -159c
+  over 30 samples, the graveyard verdict on sure-thing buying
+  stands, not armable. d9 report only: average evening spread
+  1.24c, maker-over-taker fee delta +18477c on the tape.
+- Courtroom repair, disclosed: truth_for read through the Jul 22
+  lab cache, so settlement truth ended at Jul 21 and zero snapshot
+  bands scored. settled_markets grew a fresh=True passthrough and
+  the courtroom now always fetches truth fresh. No decision rule
+  changed; the tests came first. A run earlier the same evening saw
+  slightly fewer settled bands (truth accrues by the hour); the
+  committed out/gates_status.json is the official record and every
+  number in this addendum is copied from it.
+- ESS note under the fleet effective-n rule (assay/ess.py): the 72
+  settled training entries carry effective n 39.34 to 51.79 across
+  the Bartlett ladder (ratio 0.546 to 0.719), same-day clustering
+  as expected. Receipt: lab/ess_g1.json, written by lab/run_ess.py,
+  a dependency-free mirror of the assay sweep. No pass was
+  declared, so no certification receipt was required.
+- A future official G1 re-run is an owner call. The training tape
+  keeps accruing under the adopted config; the counted clock stays
+  off until an official run clears both D1 and D3.
