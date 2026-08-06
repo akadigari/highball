@@ -50,7 +50,33 @@
   "qty": 100,
   "p_model": 97.6,
   "lead": "d0",
+  "status": "sold",
+  "ts_open": "2026-08-05T15:07:40+00:00",
+  "sell_bid": 99,
+  "sold_qty": 100
+ },
+ {
+  "city": "lax",
+  "event_date": "2026-08-06",
+  "ticker": "KXHIGHLAX-26AUG06-B76.5",
+  "ask": 19,
+  "vwap": 20,
+  "qty": 100,
+  "p_model": 35.8,
+  "lead": "d1",
   "status": "open",
-  "ts_open": "2026-08-05T15:07:40+00:00"
+  "ts_open": "2026-08-06T03:41:54+00:00"
+ },
+ {
+  "city": "lv",
+  "event_date": "2026-08-06",
+  "ticker": "KXHIGHTLV-26AUG06-B109.5",
+  "ask": 41,
+  "vwap": 42,
+  "qty": 100,
+  "p_model": 50.9,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-06T03:41:54+00:00"
  }
 ]
