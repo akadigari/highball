@@ -1,34 +1,6 @@
 [
  {
   "city": "chi",
-  "event_date": "2026-08-11",
-  "ticker": "KXHIGHCHI-26AUG11-T80",
-  "ask": 35,
-  "vwap": 35,
-  "qty": 100,
-  "p_model": 94.1,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-11T02:29:23+00:00",
-  "sell_bid": 48,
-  "sold_qty": 100
- },
- {
-  "city": "nola",
-  "event_date": "2026-08-11",
-  "ticker": "KXHIGHTNOLA-26AUG11-B95.5",
-  "ask": 11,
-  "vwap": 11,
-  "qty": 100,
-  "p_model": 30.3,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-11T02:29:23+00:00",
-  "sell_bid": 41,
-  "sold_qty": 100
- },
- {
-  "city": "chi",
   "event_date": "2026-08-12",
   "ticker": "KXHIGHCHI-26AUG12-T80",
   "ask": 11,
@@ -36,7 +8,9 @@
   "qty": 100,
   "p_model": 96.5,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-12T02:46:55+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-12T02:46:55+00:00",
+  "sell_bid": 24,
+  "sold_qty": 100
  }
 ]
