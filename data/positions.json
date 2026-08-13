@@ -8,8 +8,10 @@
   "qty": 100,
   "p_model": 29.3,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-13T02:49:13+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-13T02:49:13+00:00",
+  "sell_bid": 72,
+  "sold_qty": 100
  },
  {
   "city": "aus",
