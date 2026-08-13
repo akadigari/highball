@@ -1,20 +1,6 @@
 [
  {
   "city": "chi",
-  "event_date": "2026-08-12",
-  "ticker": "KXHIGHCHI-26AUG12-T80",
-  "ask": 11,
-  "vwap": 11,
-  "qty": 100,
-  "p_model": 96.5,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-12T02:46:55+00:00",
-  "sell_bid": 24,
-  "sold_qty": 100
- },
- {
-  "city": "chi",
   "event_date": "2026-08-13",
   "ticker": "KXHIGHCHI-26AUG13-B76.5",
   "ask": 12,
