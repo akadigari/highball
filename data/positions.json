@@ -36,5 +36,29 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-13T02:49:13+00:00"
+ },
+ {
+  "city": "sat",
+  "event_date": "2026-08-14",
+  "ticker": "KXHIGHTSATX-26AUG14-B100.5",
+  "ask": 11,
+  "vwap": 14,
+  "qty": 100,
+  "p_model": 25.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-14T02:47:53+00:00"
+ },
+ {
+  "city": "okc",
+  "event_date": "2026-08-14",
+  "ticker": "KXHIGHTOKC-26AUG14-B100.5",
+  "ask": 13,
+  "vwap": 14,
+  "qty": 100,
+  "p_model": 28.5,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-14T02:47:53+00:00"
  }
 ]
