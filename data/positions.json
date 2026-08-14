@@ -1,43 +1,5 @@
 [
  {
-  "city": "chi",
-  "event_date": "2026-08-13",
-  "ticker": "KXHIGHCHI-26AUG13-B76.5",
-  "ask": 12,
-  "vwap": 13,
-  "qty": 100,
-  "p_model": 29.3,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-13T02:49:13+00:00",
-  "sell_bid": 72,
-  "sold_qty": 100
- },
- {
-  "city": "aus",
-  "event_date": "2026-08-13",
-  "ticker": "KXHIGHAUS-26AUG13-B99.5",
-  "ask": 11,
-  "vwap": 12,
-  "qty": 100,
-  "p_model": 23.7,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-13T02:49:13+00:00"
- },
- {
-  "city": "okc",
-  "event_date": "2026-08-13",
-  "ticker": "KXHIGHTOKC-26AUG13-B101.5",
-  "ask": 10,
-  "vwap": 11,
-  "qty": 100,
-  "p_model": 28.5,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-13T02:49:13+00:00"
- },
- {
   "city": "sat",
   "event_date": "2026-08-14",
   "ticker": "KXHIGHTSATX-26AUG14-B100.5",
