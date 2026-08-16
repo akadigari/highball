@@ -36,5 +36,29 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-15T01:51:09+00:00"
+ },
+ {
+  "city": "mia",
+  "event_date": "2026-08-16",
+  "ticker": "KXHIGHMIA-26AUG16-B91.5",
+  "ask": 12,
+  "vwap": 12,
+  "qty": 100,
+  "p_model": 32.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-16T01:58:40+00:00"
+ },
+ {
+  "city": "phl",
+  "event_date": "2026-08-16",
+  "ticker": "KXHIGHPHIL-26AUG16-B83.5",
+  "ask": 13,
+  "vwap": 14,
+  "qty": 100,
+  "p_model": 30.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-16T01:58:40+00:00"
  }
 ]
