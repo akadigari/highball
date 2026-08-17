@@ -72,5 +72,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-17T01:56:29+00:00"
+ },
+ {
+  "city": "dal",
+  "event_date": "2026-08-17",
+  "ticker": "KXHIGHTDAL-26AUG17-B106.5",
+  "ask": 13,
+  "vwap": 15,
+  "qty": 100,
+  "p_model": 32.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-17T02:45:49+00:00"
  }
 ]
