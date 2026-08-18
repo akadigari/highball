@@ -1,19 +1,5 @@
 [
  {
-  "city": "sea",
-  "event_date": "2026-08-16",
-  "ticker": "KXHIGHTSEA-26AUG16-T77",
-  "ask": 53,
-  "vwap": 53,
-  "qty": 100,
-  "p_model": 82.0,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-08-16T02:46:11+00:00",
-  "sell_bid": 85,
-  "sold_qty": 100
- },
- {
   "city": "chi",
   "event_date": "2026-08-17",
   "ticker": "KXHIGHCHI-26AUG17-T78",
