@@ -8,8 +8,10 @@
   "qty": 100,
   "p_model": 55.5,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-19T01:54:31+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-19T01:54:31+00:00",
+  "sell_bid": 29,
+  "sold_qty": 100
  },
  {
   "city": "aus",
@@ -56,7 +58,9 @@
   "qty": 59,
   "p_model": 57.3,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-19T01:54:31+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-19T01:54:31+00:00",
+  "sell_bid": 18,
+  "sold_qty": 59
  }
 ]
