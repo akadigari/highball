@@ -32,8 +32,10 @@
   "qty": 12,
   "p_model": 24.0,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-20T01:53:01+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-20T01:53:01+00:00",
+  "sell_bid": 18,
+  "sold_qty": 12
  },
  {
   "city": "atl",
