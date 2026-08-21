@@ -94,8 +94,10 @@
   "qty": 80,
   "p_model": 43.3,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-21T01:59:14+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-21T01:59:14+00:00",
+  "sell_bid": 20,
+  "sold_qty": 80
  },
  {
   "city": "nola",
@@ -108,5 +110,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-21T01:59:14+00:00"
+ },
+ {
+  "city": "sea",
+  "event_date": "2026-08-21",
+  "ticker": "KXHIGHTSEA-26AUG21-T86",
+  "ask": 11,
+  "vwap": 13,
+  "qty": 100,
+  "p_model": 70.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-21T02:48:31+00:00"
  }
 ]
