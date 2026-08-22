@@ -1,17 +1,5 @@
 [
  {
-  "city": "sea",
-  "event_date": "2026-08-21",
-  "ticker": "KXHIGHTSEA-26AUG21-T86",
-  "ask": 11,
-  "vwap": 13,
-  "qty": 100,
-  "p_model": 70.0,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-21T02:48:31+00:00"
- },
- {
   "city": "dc",
   "event_date": "2026-08-22",
   "ticker": "KXHIGHTDC-26AUG22-T77",
