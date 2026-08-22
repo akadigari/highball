@@ -98,5 +98,41 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-22T01:52:18+00:00"
+ },
+ {
+  "city": "sea",
+  "event_date": "2026-08-22",
+  "ticker": "KXHIGHTSEA-26AUG22-T76",
+  "ask": 16,
+  "vwap": 18,
+  "qty": 86,
+  "p_model": 42.7,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-22T02:39:41+00:00"
+ },
+ {
+  "city": "nola",
+  "event_date": "2026-08-22",
+  "ticker": "KXHIGHTNOLA-26AUG22-T96",
+  "ask": 46,
+  "vwap": 48,
+  "qty": 100,
+  "p_model": 72.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-22T02:39:41+00:00"
+ },
+ {
+  "city": "okc",
+  "event_date": "2026-08-22",
+  "ticker": "KXHIGHTOKC-26AUG22-T102",
+  "ask": 33,
+  "vwap": 33,
+  "qty": 100,
+  "p_model": 81.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-22T02:39:41+00:00"
  }
 ]
