@@ -1,14 +1,1 @@
-[
- {
-  "city": "sea",
-  "event_date": "2026-08-22",
-  "ticker": "KXHIGHTSEA-26AUG22-T76",
-  "ask": 16,
-  "vwap": 18,
-  "qty": 86,
-  "p_model": 42.7,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-22T02:39:41+00:00"
- }
-]
+[]
