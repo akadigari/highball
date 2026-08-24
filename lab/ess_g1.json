@@ -1,47 +1,52 @@
 {
  "what": "effective n of the settled taker P&L series, Bartlett ladder",
  "reference": "assay/ess.py, the fleet effective-n rule",
- "written": "2026-08-06T02:21:13+00:00",
- "n": 72,
- "ess_min": 39.34,
- "ess_max": 51.79,
- "ratio_min": 0.546,
- "ratio_max": 0.719,
+ "written": "2026-08-24T11:51:14+00:00",
+ "n": 120,
+ "ess_min": 70.13,
+ "ess_max": 93.51,
+ "ratio_min": 0.584,
+ "ratio_max": 0.779,
  "sweep": [
   {
    "bandwidth": 1,
-   "vif": 1.390187,
-   "ess": 51.79
+   "vif": 1.283317,
+   "ess": 93.51
   },
   {
    "bandwidth": 2,
-   "vif": 1.52701,
-   "ess": 47.15
+   "vif": 1.384008,
+   "ess": 86.7
   },
   {
    "bandwidth": 3,
-   "vif": 1.549334,
-   "ess": 46.47
+   "vif": 1.388132,
+   "ess": 86.45
   },
   {
    "bandwidth": 5,
-   "vif": 1.61982,
-   "ess": 44.45
+   "vif": 1.402889,
+   "ess": 85.54
   },
   {
    "bandwidth": 8,
-   "vif": 1.737456,
-   "ess": 41.44
+   "vif": 1.499539,
+   "ess": 80.02
   },
   {
    "bandwidth": 13,
-   "vif": 1.800929,
-   "ess": 39.98
+   "vif": 1.585059,
+   "ess": 75.71
   },
   {
    "bandwidth": 21,
-   "vif": 1.830256,
-   "ess": 39.34
+   "vif": 1.711072,
+   "ess": 70.13
+  },
+  {
+   "bandwidth": 34,
+   "vif": 1.704181,
+   "ess": 70.42
   }
  ]
 }

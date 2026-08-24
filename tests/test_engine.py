@@ -66,8 +66,12 @@ class TestBandProb(unittest.TestCase):
 
 class TestEntry(unittest.TestCase):
     def test_longshot_filter_blocks_cheap_bands(self):
-        board = [{"ticker": "A", "p_model": 30.0, "ask": 8, "bid": 6}]
+        board = [{"ticker": "A", "p_model": 50.0, "ask": 14, "bid": 12}]
         self.assertIsNone(engine.pick_entry(board))
+
+    def test_official_rerun_floor_allows_fifteen_cents(self):
+        board = [{"ticker": "A", "p_model": 50.0, "ask": 15, "bid": 13}]
+        self.assertEqual(engine.pick_entry(board)["ticker"], "A")
 
     def test_needs_margin_after_fees(self):
         # G1 d2: entries are judged on the shrunk probability,
@@ -101,7 +105,7 @@ class TestExit(unittest.TestCase):
 
 
 class TestG1Adoptions(unittest.TestCase):
-    """Engine changes adopted at the official G1 run, 2026-08-05.
+    """Engine changes adopted at official G1 and its authorized rerun.
     Rules frozen in SPEC.md addendum 10; numbers in gates_status.json g1."""
 
     def test_used_prob_is_half_model_half_mid(self):
@@ -130,10 +134,13 @@ class TestG1Adoptions(unittest.TestCase):
         self.assertEqual(engine.entry_leads(12), [])
 
     def test_bench(self):
-        # d7: den, lax, lv all had >=6 settled, negative pnl, negative clv
-        for c in ("den", "lax", "lv"):
+        # D7 benches persist until G2; the rerun added Austin.
+        for c in ("den", "lax", "lv", "aus"):
             self.assertTrue(engine.is_benched(c))
         self.assertFalse(engine.is_benched("sea"))
+
+    def test_rerun_raised_longshot_floor(self):
+        self.assertEqual(engine.MIN_ASK, 15)
 
 
 class TestFillWalk(unittest.TestCase):

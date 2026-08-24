@@ -468,3 +468,27 @@ out/gates_status.json under g1.
 - A future official G1 re-run is an owner call. The training tape
   keeps accruing under the adopted config; the counted clock stays
   off until an official run clears both D1 and D3.
+
+## Addendum 13, 2026-08-24: the single authorized G1 rerun
+
+The owner authorized all in-scope work, including the one official G1
+rerun, on 2026-08-24. The one-shot wrapper archived the first official
+result and wrote `out/g1_official_rerun_receipt.json` before invoking
+the unchanged courtroom. The rerun is consumed and automatic reruns
+remain forbidden.
+
+- Verdict: G1 still does NOT pass. The tape reached 120 settled entries
+  over 34 snapshot days. Five cities met the raw D1 city rule: sea,
+  chi, dal, okc, and nola. D3 still vetoed the counted clock because
+  the adopted model Brier was 0.06723 versus market mid at 0.06000
+  across 14,463 evening bands.
+- D5 now clears its minimum and raises the longshot floor to 15c:
+  31 sub-15c entries net -18071c. The engine adopted the floor the
+  same day.
+- D7 added aus to the bench. Existing benches remain in force until
+  G2, so den, lax, lv, and aus accept no new entries.
+- D2 remains w=0.5, D4 remains ride-to-settle at 95c or better, and
+  D6 remains evening-only. The D8 afternoon meter was -163c over 52
+  samples and remains not armable. D9 remains report-only.
+- This rerun used keyless public data and the sim ledger only. It used
+  no credentials, placed no orders, and moved no real money.

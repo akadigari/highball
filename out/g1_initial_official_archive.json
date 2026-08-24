@@ -1,0 +1,138 @@
+{
+  "archived_at": "2026-08-24T11:48:52+00:00",
+  "g1": {
+    "decisions": {
+      "d1_counted_clock": {
+        "passed": false,
+        "per_city": {
+          "atl": {
+            "n": 1,
+            "pnl_c": -1300
+          },
+          "aus": {
+            "n": 5,
+            "pnl_c": -8400
+          },
+          "bos": {
+            "n": 1,
+            "pnl_c": -1400
+          },
+          "chi": {
+            "n": 3,
+            "pnl_c": -2100
+          },
+          "dal": {
+            "n": 3,
+            "pnl_c": 3500
+          },
+          "den": {
+            "n": 13,
+            "pnl_c": -4485
+          },
+          "lax": {
+            "n": 12,
+            "pnl_c": -4700
+          },
+          "lv": {
+            "n": 12,
+            "pnl_c": -12986
+          },
+          "mia": {
+            "n": 1,
+            "pnl_c": -1600
+          },
+          "nola": {
+            "n": 3,
+            "pnl_c": -3900
+          },
+          "nyc": {
+            "n": 1,
+            "pnl_c": -1600
+          },
+          "okc": {
+            "n": 5,
+            "pnl_c": 3995
+          },
+          "sat": {
+            "n": 2,
+            "pnl_c": -9130
+          },
+          "sea": {
+            "n": 10,
+            "pnl_c": 14400
+          }
+        },
+        "qualifying_cities": [
+          "sea",
+          "okc"
+        ],
+        "rule": ">=3 cities with >=5 settled entries and positive net taker P&L"
+      },
+      "d2_shrink": {
+        "adopted_w": 0.5,
+        "n_bands": 3838,
+        "rule": "adopt best w only if >=2% relative Brier gain vs w=1.0",
+        "scores": {
+          "0.5": 0.06646,
+          "0.6": 0.06991,
+          "0.7": 0.074,
+          "0.8": 0.07872,
+          "1.0": 0.09009
+        }
+      },
+      "d3_honesty": {
+        "market_brier": 0.0588,
+        "model_brier": 0.06646,
+        "override_fired": true,
+        "rule": "no counted clock if adopted model Brier worse than market mid"
+      },
+      "d4_exit_95": {
+        "adopt_ride": true,
+        "hold_total_c": 72500,
+        "n": 13,
+        "rule": "ride bids >=95c if holding beat selling, min 5",
+        "sell_total_c": 69600
+      },
+      "d5_floor": {
+        "n": 9,
+        "pnl_c": -9885,
+        "raise_floor": false,
+        "rule": "raise floor to 15c if sub-15c entries net negative, min 10"
+      },
+      "d6_mornings": {
+        "close_mornings": true,
+        "n": 36,
+        "pnl_c": -6606,
+        "rule": "close morning window if d0 entries net negative, min 8"
+      },
+      "d7_bench": {
+        "benched": [
+          "den",
+          "lax",
+          "lv"
+        ],
+        "rule": "bench city: >=6 settled, negative P&L, negative mean CLV"
+      },
+      "d8_afternoon_meter": {
+        "armable": false,
+        "n": 30,
+        "pnl_c_per_contract_sum": -159,
+        "rule": "report always; armable only if positive with n>=50, owner call"
+      },
+      "d9_maker": {
+        "avg_spread_c": 1.24,
+        "fee_delta_c": 18477.0,
+        "n": 3838,
+        "rule": "report only"
+      }
+    },
+    "min_days": 14,
+    "mode": "OFFICIAL",
+    "passed": false,
+    "ran": "2026-08-06T02:05:37+00:00",
+    "settled_entries": 72,
+    "snapshot_days": 15
+  },
+  "schema_version": 1,
+  "source": "out/gates_status.json#g1"
+}
