@@ -1,1 +1,26 @@
-[]
+[
+ {
+  "city": "aus",
+  "event_date": "2026-08-24",
+  "ticker": "KXHIGHAUS-26AUG24-B102.5",
+  "ask": 10,
+  "vwap": 10,
+  "qty": 100,
+  "p_model": 30.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-24T01:59:07+00:00"
+ },
+ {
+  "city": "bos",
+  "event_date": "2026-08-24",
+  "ticker": "KXHIGHTBOS-26AUG24-B85.5",
+  "ask": 13,
+  "vwap": 15,
+  "qty": 94,
+  "p_model": 28.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-24T01:59:07+00:00"
+ }
+]
