@@ -20,7 +20,9 @@
   "qty": 94,
   "p_model": 28.0,
   "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-24T01:59:07+00:00"
+  "status": "sold",
+  "ts_open": "2026-08-24T01:59:07+00:00",
+  "sell_bid": 44,
+  "sold_qty": 94
  }
 ]
