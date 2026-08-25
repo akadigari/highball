@@ -36,5 +36,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-25T01:54:16+00:00"
+ },
+ {
+  "city": "sea",
+  "event_date": "2026-08-25",
+  "ticker": "KXHIGHTSEA-26AUG25-T83",
+  "ask": 15,
+  "vwap": 17,
+  "qty": 100,
+  "p_model": 40.2,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-25T02:43:55+00:00"
  }
 ]
