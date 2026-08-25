@@ -24,5 +24,17 @@
   "ts_open": "2026-08-24T01:59:07+00:00",
   "sell_bid": 44,
   "sold_qty": 94
+ },
+ {
+  "city": "nyc",
+  "event_date": "2026-08-25",
+  "ticker": "KXHIGHNY-26AUG25-T79",
+  "ask": 55,
+  "vwap": 55,
+  "qty": 100,
+  "p_model": 86.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-25T01:54:16+00:00"
  }
 ]
