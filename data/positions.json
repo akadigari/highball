@@ -10,5 +10,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-27T23:03:32+00:00"
+ },
+ {
+  "city": "sat",
+  "event_date": "2026-08-28",
+  "ticker": "KXHIGHTSATX-26AUG28-T97",
+  "ask": 20,
+  "vwap": 21,
+  "qty": 15,
+  "p_model": 57.8,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-28T01:34:55+00:00"
  }
 ]
