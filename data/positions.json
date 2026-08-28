@@ -24,5 +24,29 @@
   "ts_open": "2026-08-28T01:34:55+00:00",
   "sell_bid": 28,
   "sold_qty": 15
+ },
+ {
+  "city": "nyc",
+  "event_date": "2026-08-29",
+  "ticker": "KXHIGHNY-26AUG29-T79",
+  "ask": 55,
+  "vwap": 56,
+  "qty": 100,
+  "p_model": 91.2,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-28T23:12:41+00:00"
+ },
+ {
+  "city": "phl",
+  "event_date": "2026-08-29",
+  "ticker": "KXHIGHPHIL-26AUG29-T81",
+  "ask": 15,
+  "vwap": 17,
+  "qty": 98,
+  "p_model": 85.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-28T23:12:41+00:00"
  }
 ]
