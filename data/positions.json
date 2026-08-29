@@ -1,17 +1,5 @@
 [
  {
-  "city": "mia",
-  "event_date": "2026-08-28",
-  "ticker": "KXHIGHMIA-26AUG28-B90.5",
-  "ask": 17,
-  "vwap": 18,
-  "qty": 100,
-  "p_model": 32.8,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-08-27T23:03:32+00:00"
- },
- {
   "city": "sat",
   "event_date": "2026-08-28",
   "ticker": "KXHIGHTSATX-26AUG28-T97",
