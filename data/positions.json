@@ -48,5 +48,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-08-28T23:12:41+00:00"
+ },
+ {
+  "city": "bos",
+  "event_date": "2026-08-29",
+  "ticker": "KXHIGHTBOS-26AUG29-T76",
+  "ask": 54,
+  "vwap": 56,
+  "qty": 89,
+  "p_model": 73.3,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-08-29T01:03:53+00:00"
  }
 ]
