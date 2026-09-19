@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "city": "sea",
+  "event_date": "2026-09-19",
+  "ticker": "KXHIGHTSEA-26SEP19-B72.5",
+  "ask": 17,
+  "vwap": 20,
+  "qty": 100,
+  "p_model": 30.0,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-09-19T04:41:25+00:00"
+ }
+]
