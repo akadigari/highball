@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "city": "nyc",
+  "event_date": "2026-10-13",
+  "ticker": "KXHIGHNY-26OCT13-T71",
+  "ask": 26,
+  "vwap": 27,
+  "qty": 100,
+  "p_model": 40.7,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-10-12T23:41:38+00:00"
+ }
+]
