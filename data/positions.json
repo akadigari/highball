@@ -1,33 +1,5 @@
 [
  {
-  "city": "mia",
-  "event_date": "2026-11-24",
-  "ticker": "KXHIGHMIA-26NOV24-B77.5",
-  "ask": 23,
-  "vwap": 24,
-  "qty": 100,
-  "p_model": 45.9,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-11-24T00:28:18+00:00",
-  "sell_bid": 25,
-  "sold_qty": 100
- },
- {
-  "city": "atl",
-  "event_date": "2026-11-24",
-  "ticker": "KXHIGHTATL-26NOV24-T61",
-  "ask": 26,
-  "vwap": 27,
-  "qty": 100,
-  "p_model": 58.9,
-  "lead": "d1",
-  "status": "sold",
-  "ts_open": "2026-11-24T00:28:18+00:00",
-  "sell_bid": 28,
-  "sold_qty": 100
- },
- {
   "city": "sea",
   "event_date": "2026-11-24",
   "ticker": "KXHIGHTSEA-26NOV24-T55",
