@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "city": "mia",
+  "event_date": "2026-11-26",
+  "ticker": "KXHIGHMIA-26NOV26-B76.5",
+  "ask": 15,
+  "vwap": 16,
+  "qty": 100,
+  "p_model": 34.2,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-11-26T01:03:33+00:00"
+ }
+]
