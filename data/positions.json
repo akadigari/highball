@@ -10,5 +10,17 @@
   "lead": "d1",
   "status": "open",
   "ts_open": "2026-11-27T01:05:03+00:00"
+ },
+ {
+  "city": "nyc",
+  "event_date": "2026-11-28",
+  "ticker": "KXHIGHNY-26NOV28-T52",
+  "ask": 66,
+  "vwap": 67,
+  "qty": 100,
+  "p_model": 96.9,
+  "lead": "d1",
+  "status": "open",
+  "ts_open": "2026-11-28T00:36:25+00:00"
  }
 ]
