@@ -1,17 +1,5 @@
 [
  {
-  "city": "mia",
-  "event_date": "2026-11-27",
-  "ticker": "KXHIGHMIA-26NOV27-B72.5",
-  "ask": 15,
-  "vwap": 15,
-  "qty": 100,
-  "p_model": 45.9,
-  "lead": "d1",
-  "status": "open",
-  "ts_open": "2026-11-27T01:05:03+00:00"
- },
- {
   "city": "nyc",
   "event_date": "2026-11-28",
   "ticker": "KXHIGHNY-26NOV28-T52",
